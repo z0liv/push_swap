@@ -4,4 +4,5 @@
 ## DESCRIPCIÓN:
 ## INSTRUCCIONES:
 ## RECURSOS:
+https://caiorss.github.io/C-Cpp-Notes/compiler-flags-options.html //flags c
 ## FUNCIONAMIENTO DE LOS ALGORITMOS:
