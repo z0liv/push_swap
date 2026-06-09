@@ -1,40 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_print_hexu.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/05 09:07:59 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/09 10:26:34 by khurtado         ###   ########.fr       */
+/*   Created: 2026/05/20 16:43:16 by khurtado          #+#    #+#             */
+/*   Updated: 2026/05/20 16:44:15 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_printf.h"
 
-
-char	**ft_to_array(char *str)
+int	ft_print_hexu(unsigned int nbr)
 {
-	char	**str2;
-	str2 = ft_split(str, ' ');
-	
+	unsigned int	counter;
 
-	return (str2);
-}
-
-int	main(int argc, char **argv)
-{
-	char	**result;
-	int		i;
-
-	if (argc > 1)
-		printf("%s",argv[1]);
-	result = ft_to_array(argv[1]);
-	i = 0;
-	while (result[i])
+	counter = 0;
+	if (nbr >= 16)
 	{
-		ft_printf("word[%d] = %s\n", i, result[i]);
-		i++;
+		counter += ft_print_hexu(nbr / 16);
 	}
-	return (0);
+	if (nbr % 16 >= 10)
+	{
+		ft_putchar_fd(nbr % 16 + 'A' - 10, 1);
+		counter++;
+	}
+	else
+	{
+		ft_putchar_fd(nbr % 16 + 48, 1);
+		counter++;
+	}
+	return (counter);
 }

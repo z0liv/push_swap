@@ -1,40 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_print_nbr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/05 09:07:59 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/09 10:26:34 by khurtado         ###   ########.fr       */
+/*   Created: 2026/05/19 14:50:08 by khurtado          #+#    #+#             */
+/*   Updated: 2026/05/20 10:54:06 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_printf.h"
 
-
-char	**ft_to_array(char *str)
+static int	ft_count_char(int n)
 {
-	char	**str2;
-	str2 = ft_split(str, ' ');
-	
+	int		counter;
+	long	nb;
 
-	return (str2);
+	nb = n;
+	counter = 0;
+	if (nb <= 0)
+		counter++;
+	while (nb != 0)
+	{
+		nb = nb / 10;
+		counter++;
+	}
+	return (counter);
 }
 
-int	main(int argc, char **argv)
+int	ft_print_nbr(int nbr)
 {
-	char	**result;
-	int		i;
-
-	if (argc > 1)
-		printf("%s",argv[1]);
-	result = ft_to_array(argv[1]);
-	i = 0;
-	while (result[i])
-	{
-		ft_printf("word[%d] = %s\n", i, result[i]);
-		i++;
-	}
-	return (0);
+	ft_putnbr_fd(nbr, 1);
+	return (ft_count_char(nbr) - 1);
 }
