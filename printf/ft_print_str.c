@@ -1,40 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_print_str.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/05 09:07:59 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/09 10:26:34 by khurtado         ###   ########.fr       */
+/*   Created: 2026/05/19 12:57:16 by khurtado          #+#    #+#             */
+/*   Updated: 2026/05/21 10:45:57 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_printf.h"
 
-
-char	**ft_to_array(char *str)
+int	ft_print_str(char *str)
 {
-	char	**str2;
-	str2 = ft_split(str, ' ');
-	
-
-	return (str2);
-}
-
-int	main(int argc, char **argv)
-{
-	char	**result;
-	int		i;
-
-	if (argc > 1)
-		printf("%s",argv[1]);
-	result = ft_to_array(argv[1]);
-	i = 0;
-	while (result[i])
-	{
-		ft_printf("word[%d] = %s\n", i, result[i]);
-		i++;
-	}
-	return (0);
+	if (str == NULL)
+		return (write (1, "(null)", 6) - 1);
+	ft_putstr_fd(str, 1);
+	return (ft_strlen(str) - 1);
 }

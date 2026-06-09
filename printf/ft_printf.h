@@ -1,40 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/05 09:07:59 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/09 10:26:34 by khurtado         ###   ########.fr       */
+/*   Created: 2026/05/14 10:41:02 by khurtado          #+#    #+#             */
+/*   Updated: 2026/05/21 10:11:04 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
+# include "./libft/libft.h"
+# include <stdarg.h>
 
+int	ft_printf(char const *str, ...);
+int	ft_print_char(char c);
+int	ft_print_str(char *str);
+int	ft_print_nbr(int nbr);
+int	ft_print_unbr(int nbr);
+int	ft_print_hexl(unsigned int nbr);
+int	ft_print_hexu(unsigned int nbr);
+int	ft_print_ptr(void *ptr);
 
-char	**ft_to_array(char *str)
-{
-	char	**str2;
-	str2 = ft_split(str, ' ');
-	
-
-	return (str2);
-}
-
-int	main(int argc, char **argv)
-{
-	char	**result;
-	int		i;
-
-	if (argc > 1)
-		printf("%s",argv[1]);
-	result = ft_to_array(argv[1]);
-	i = 0;
-	while (result[i])
-	{
-		ft_printf("word[%d] = %s\n", i, result[i]);
-		i++;
-	}
-	return (0);
-}
+#endif
