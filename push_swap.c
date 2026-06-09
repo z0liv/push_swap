@@ -6,25 +6,38 @@
 /*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 09:07:59 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/09 10:26:34 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/06/09 11:01:23 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 
-char	**ft_to_array(char *str)
+int	*ft_to_array(char *str)
 {
 	char	**str2;
-	str2 = ft_split(str, ' ');
-	
+	int		counter;
+	int		*array;
 
-	return (str2);
+	counter = 0;
+	str2 = ft_split(str, ' ');
+	while (str2[counter])
+		counter++;
+	array = malloc(sizeof(int) * counter);
+	if(!array)
+		return (ft_free_split(str2, counter), NULL);
+	counter = 0;
+	while (str2[counter])
+	{
+		array[counter] = ft_atoi(str2[counter]);
+		counter++;
+	}
+	return (ft_free_split(str2, counter), array);
 }
 
 int	main(int argc, char **argv)
 {
-	char	**result;
+	int	*result;
 	int		i;
 
 	if (argc > 1)
@@ -33,8 +46,8 @@ int	main(int argc, char **argv)
 	i = 0;
 	while (result[i])
 	{
-		ft_printf("word[%d] = %s\n", i, result[i]);
+		ft_printf("number [%d] ", result[i]);
 		i++;
 	}
-	return (0);
+	return (free(result),0);
 }
