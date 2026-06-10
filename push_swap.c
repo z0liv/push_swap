@@ -6,7 +6,7 @@
 /*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 09:07:59 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/09 11:01:23 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/06/10 10:11:36 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	*ft_to_array(char *str)
 	}
 	return (ft_free_split(str2, counter), array);
 }
-
+/*
 int	main(int argc, char **argv)
 {
 	int	*result;
@@ -51,3 +51,4 @@ int	main(int argc, char **argv)
 	}
 	return (free(result),0);
 }
+*/
