@@ -6,7 +6,7 @@
 /*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 09:07:59 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/11 09:47:11 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/06/11 10:43:10 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,19 @@ int	main(int argc, char **argv)
 	result = ft_to_array(argv[1], &temp);
 
 	i = 0;
-	while (i < temp)
+	if (argc <= 1)
+		return (0);
+	if (argc == 2)
+	{
+		result = ft_to_array(argv[1]);
+		while (result[i])
+		{
+			ft_printf("word[%d] = %s\n", i, result[i]);
+			ft_printf("is valid gg?", ft_is_valid_input(result[i]));
+			i++;
+		}
+	}
+	else
 	{
 		ft_printf("number [%d] ", result[i]);
 		i++;
