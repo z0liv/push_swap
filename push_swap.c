@@ -6,7 +6,7 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 09:07:59 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/11 15:03:12 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/11 15:10:54 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	*ft_to_array(char *str, int *counter)
 		return (ft_free_split(str2, *counter), NULL);
 	while (nmbrs < *counter)
 	{
-		array[nmbrs] = ft_atoi(str2[nmbrs]);
+		array[nmbrs] = ft_atol(str2[nmbrs]);
 		nmbrs++;
 	}
 	return (ft_free_split(str2, *counter), array);

@@ -6,7 +6,7 @@
 #   By: omarquez <omarquez@student.42urduliz.com>    +#+  +:+       +#+        #
 #                                                  +#+#+#+#+#+   +#+           #
 #   Created: 2026/06/05 09:12:44 by omarquez            #+#    #+#             #
-#   Updated: 2026/06/11 12:15:20 by omarquez           ###   ########.fr       #
+#   Updated: 2026/06/11 15:08:43 by omarquez           ###   ########.fr       #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ INCLUDES = -I./printf
 
 SRCS = 	push_swap.c ft_dlstlast.c ft_dlstsize.c ft_dlstadd_back.c ft_dlstnew.c \
 		ft_dlstadd_front.c ft_is_valid_input.c ft_is_duplicate.c ft_is_flag.c  \
-		ft_concat_params.c
+		ft_concat_params.c ft_atol.c
 
 OBJS = $(SRCS:.c=.o)
 

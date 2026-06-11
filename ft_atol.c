@@ -6,11 +6,11 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 14:56:51 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/11 14:58:06 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/11 15:08:31 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-long int	ft_atoi(const char *str)
+long int	ft_atol(const char *str)
 {
 	int			counter;
 	int			sign;
