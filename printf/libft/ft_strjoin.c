@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: khurtado <khurtado@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 09:55:57 by khurtado          #+#    #+#             */
-/*   Updated: 2026/05/08 11:05:58 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/06/11 09:29:26 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
