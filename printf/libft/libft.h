@@ -6,7 +6,7 @@
 /*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/27 12:32:59 by khurtado          #+#    #+#             */
-/*   Updated: 2026/05/19 09:30:55 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/06/09 11:00:10 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ char	*ft_strtrim(char const *s1, char const *set);
 int		ft_atoi(const char *str);
 char	*ft_itoa(int n);
 char	**ft_split(const char *str, char c);
+void	ft_free_split(char **str, int size);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 void	ft_putchar_fd(char c, int fd);

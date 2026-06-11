@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: khurtado <khurtado@student.42urduliz.co    +#+  +:+       +#+        */
+/*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 13:33:42 by khurtado          #+#    #+#             */
-/*   Updated: 2026/05/08 11:12:38 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/06/09 10:58:33 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	ft_free_split(char **str, int size)
+void	ft_free_split(char **str, int size)
 {
 	while (size >= 0)
 		free(str[size--]);
