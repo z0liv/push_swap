@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_concat_params.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 12:14:08 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/11 12:14:30 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/11 12:35:24 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-char	*ft_concat_args(char **args)
+char	*ft_concat_params(char **args)
 {
 	char	*tmp_param;
 	char	*result;

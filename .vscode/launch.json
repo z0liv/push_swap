@@ -7,7 +7,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/push_swap", // Replace with your executable path
-            "args": ["1 2 3 4 5  6"],
+            "args": ["1 2 3 4 5  6", "1"],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
