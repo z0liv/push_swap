@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   ft_dlstiter.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 13:06:22 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/09 13:27:52 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/10 12:12:58 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_dlstiter(t_d_list *lst, void (*f)(void *))
+/* void	ft_dlstiter(t_d_list *lst, void (*f)(void *))
 {
 	t_d_list	*lst_tmp;
 
@@ -25,4 +25,4 @@ void	ft_dlstiter(t_d_list *lst, void (*f)(void *))
 		lst_tmp = (*lst_tmp).next;
 		lst = lst_tmp;
 	}
-}
+} */

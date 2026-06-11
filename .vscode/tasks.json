@@ -1,0 +1,21 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+			"label": "build & debug",
+			"type": "shell",
+			"command": "gcc",
+			"args": [
+				"-g",
+				"*.c",
+				"-o",
+				"push_swap",
+				"printf/libftprintf.a",
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		}
+    ]
+}
