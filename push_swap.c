@@ -6,33 +6,33 @@
 /*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 09:07:59 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/10 14:46:49 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/06/11 09:47:11 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 
-int	*ft_to_array(char *str)
+int	*ft_to_array(char *str, int *counter)
 {
 	char	**str2;
-	int		counter;
 	int		*array;
+	int		nmbrs;
 
-	counter = 0;
+	nmbrs = 0;
 	str2 = ft_split(str, ' ');
-	while (str2[counter])
-		counter++;
-	array = (int *) malloc(sizeof(int) * counter);
+	while (str2[*counter])
+		*counter+= 1;
+	array = (int *) malloc(sizeof(int) * (*counter));
 	if(!array)
-		return (ft_free_split(str2, counter), NULL);
-	counter = 0;
-	while (str2[counter] != NULL)
+		return (ft_free_split(str2, *counter), NULL);
+	
+	while (nmbrs < *counter)
 	{
-		array[counter] = ft_atoi(str2[counter]);
-		counter++;
+		array[nmbrs] = ft_atoi(str2[nmbrs]);
+		nmbrs++;
 	}
-	return (ft_free_split(str2, counter), array);
+	return (ft_free_split(str2, *counter), array);
 }
 /* int	ft_array_len(int *array)
 {
@@ -47,8 +47,6 @@ int	*ft_to_array(char *str)
 	}
 	return (counter);
 } */
-
-
 int	main(int argc, char **argv)
 {
 	int	*result;
@@ -57,10 +55,11 @@ int	main(int argc, char **argv)
 
 	if (argc > 1)
 		printf("%s",argv[1]);
-	result = ft_to_array(argv[1]);
+	temp = 0;
+	result = ft_to_array(argv[1], &temp);
 
 	i = 0;
-	while (result[i])
+	while (i < temp)
 	{
 		ft_printf("number [%d] ", result[i]);
 		i++;
