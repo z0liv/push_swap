@@ -6,7 +6,7 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 09:10:23 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/11 09:51:18 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/11 12:14:39 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,6 @@ int			ft_dlstsize(t_d_list *lst);
 int	ft_is_valid_input(char *input);
 int	ft_is_duplicate(int *array, int array_len);
 int	ft_is_flag(char *param);
+int	ft_concat_params(char **args);
 
 #endif
