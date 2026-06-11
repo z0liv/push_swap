@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 09:07:59 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/11 12:47:48 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/06/11 15:03:12 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
 
 int	*ft_to_array(char *str, int *counter)
 {
@@ -23,11 +22,10 @@ int	*ft_to_array(char *str, int *counter)
 	str2 = ft_split(str, ' ');
 	free(str);
 	while (str2[*counter])
-		*counter+= 1;
+		*counter += 1;
 	array = malloc(sizeof(int) * (*counter));
-	if(!array)
+	if (!array)
 		return (ft_free_split(str2, *counter), NULL);
-	
 	while (nmbrs < *counter)
 	{
 		array[nmbrs] = ft_atoi(str2[nmbrs]);
@@ -42,13 +40,14 @@ int	main(int argc, char **argv)
 	int		counter;
 	int		*array;
 	int		i;
-	
+
 	counter = 0;
 	if (argc <= 1)
 		return (0);
 	if (argc > 2)
 	{
 		result = ft_concat_params(argv);
+		ft_printf("is valid?: %d \n", ft_is_valid_input(result));
 		array = ft_to_array(result, &counter);
 	}
 	else
@@ -60,7 +59,5 @@ int	main(int argc, char **argv)
 		i++;
 	}
 	ft_printf("finalzacion de la ejecuion \n");
-	return (free(array),0);
-} 
-
-
+	return (free(array), 0);
+}

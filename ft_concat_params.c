@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_concat_params.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 12:14:08 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/11 12:35:24 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/06/11 14:58:37 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_concat_params(char **args)
 	char	*result;
 	char	*tmp_result;
 	int		i;
-	
+
 	i = 1;
 	result = ft_strdup("");
 	while (args[i])
