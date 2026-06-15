@@ -6,7 +6,7 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 09:07:59 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/11 15:10:54 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/15 09:55:28 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,10 @@ int	main(int argc, char **argv)
 		array = ft_to_array(result, &counter);
 	}
 	else
+	{
+		ft_printf("is valid?: %d \n", ft_is_valid_input(argv[1]));
 		array = ft_to_array(ft_strdup(argv[1]), &counter);
+	}
 	i = 0;
 	while (i < counter)
 	{
