@@ -6,7 +6,7 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 12:14:08 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/11 14:58:37 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/15 13:17:03 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,7 @@ char	*ft_concat_params(char **args)
 		result = tmp_result;
 		i++;
 	}
+	if (!ft_is_valid_input(result))
+		exit (ft_printf("Error \n"));
 	return (tmp_result);
 }

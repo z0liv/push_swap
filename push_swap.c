@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 09:07:59 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/15 12:37:35 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/06/15 13:23:37 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,19 +47,15 @@ int	main(int argc, char **argv)
 	if (argc > 2)
 	{
 		result = ft_concat_params(argv);
-		if (!ft_is_valid_input(result))
-			return (ft_printf("Error \n"));
 		array = ft_to_array(result, &counter);
-		if (!ft_arr_to_lst(array, &counter))
-			return (ft_printf("Error \n"));
+		ft_arr_to_lst(array, &counter);
 	}
 	else
 	{
 		if (!ft_is_valid_input(argv[1]))
 			return (ft_printf("Error \n"));
 		array = ft_to_array(ft_strdup(argv[1]), &counter);
-		if (!ft_arr_to_lst(array, &counter))
-			return (ft_printf("Error \n"));
+		ft_arr_to_lst(array, &counter);
 	}
 	i = 0;
 	while (i < counter)
