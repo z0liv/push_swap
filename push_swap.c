@@ -12,10 +12,10 @@
 
 #include "push_swap.h"
 
-int	*ft_to_array(char *str, int *counter)
+long	*ft_to_array(char *str, int *counter)
 {
 	char	**str2;
-	int		*array;
+	long	*array;
 	int		nmbrs;
 
 	nmbrs = 0;
@@ -23,7 +23,7 @@ int	*ft_to_array(char *str, int *counter)
 	free(str);
 	while (str2[*counter])
 		*counter += 1;
-	array = malloc(sizeof(int) * (*counter));
+	array = malloc(sizeof(long) * (*counter));
 	if (!array)
 		return (ft_free_split(str2, *counter), NULL);
 	while (nmbrs < *counter)
@@ -37,8 +37,8 @@ int	*ft_to_array(char *str, int *counter)
 int	main(int argc, char **argv)
 {
 	char	*result;
+	long	*array;
 	int		counter;
-	int		*array;
 	int		i;
 
 	counter = 0;
@@ -47,11 +47,20 @@ int	main(int argc, char **argv)
 	if (argc > 2)
 	{
 		result = ft_concat_params(argv);
-		ft_printf("is valid?: %d \n", ft_is_valid_input(result));
+		if (!ft_is_valid_input(result))
+			return (ft_printf("Error \n"));
 		array = ft_to_array(result, &counter);
+		if (!ft_arr_to_lst(array, &counter))
+			return (ft_printf("Error \n"));
 	}
 	else
+	{
+		if (!ft_is_valid_input(argv[1]))
+			return (ft_printf("Error \n"));
 		array = ft_to_array(ft_strdup(argv[1]), &counter);
+		if (!ft_arr_to_lst(array, &counter))
+			return (ft_printf("Error \n"));
+	}
 	i = 0;
 	while (i < counter)
 	{
