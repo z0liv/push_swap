@@ -1,37 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atol.c                                          :+:      :+:    :+:   */
+/*   ft_is_overflow.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/11 14:56:51 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/15 12:13:17 by omarquez         ###   ########.fr       */
+/*   Created: 2026/06/15 10:45:06 by omarquez          #+#    #+#             */
+/*   Updated: 2026/06/15 12:58:51 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-long	ft_atol(const char *str)
+#include "push_swap.h"
+
+int	ft_is_overflow(long *array, int array_len)
 {
 	int			counter;
-	int			sign;
-	long int	result;
 
 	counter = 0;
-	sign = 1;
-	result = 0;
-	while (str[counter] == ' '
-		|| (str[counter] >= 9 && str[counter] <= 13))
-		counter++;
-	if (str[counter] == '-' || str[counter] == '+')
+	while (counter < array_len)
 	{
-		if (str[counter] == '-')
-			sign = -1;
-		counter++;
+		if (array[counter] > 2147483647
+			|| array[counter] < -2147483648)
+			return (1);
+		counter ++;
 	}
-	while (str[counter] >= '0' && str[counter] <= '9')
-	{
-		result = result * 10 + (str[counter] - '0');
-		counter++;
-	}
-	return (result * sign);
+	return (0);
 }
