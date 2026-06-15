@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 09:10:23 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/15 12:07:01 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/15 12:39:42 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,6 @@ int			ft_is_overflow(long *array, int array_len);
 int			ft_arr_to_lst(long	*arr, int *counter);
 char		*ft_concat_params(char **args);
 long int	ft_atol(const char *str);
+float		ft_calculate_disorder(int *array, int *counter);
 
 #endif
