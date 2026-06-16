@@ -6,16 +6,16 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 09:07:59 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/16 10:16:48 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/16 10:46:29 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void ft_print_params(long *array, int *counter)
+static void	ft_print_params(long *array, int *counter)
 {
-	int i;
-	
+	int	i;
+
 	i = 0;
 	while (i < *counter)
 	{

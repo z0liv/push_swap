@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 09:10:23 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/15 12:39:42 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/06/16 10:50:58 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,6 @@ t_d_list	*ft_dlstlast(t_d_list *lst);
 int			ft_dlstsize(t_d_list *lst);
 //void		ft_dlstclear(t_d_list **lst, void (*del)(void*));
 //void		ft_dlstdelone(t_d_list *lst, void (*del)(void *));
-//void		ft_dlstiter(t_d_list *lst, void (*f)(void *));
-//t_d_list	*ft_dlstmap(t_d_list *lst, void *(*f)(void *), void (*del)(void *));
 
 int			ft_is_valid_input(char *input);
 int			ft_is_duplicate(long *array, int array_len);
