@@ -6,11 +6,17 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 12:14:08 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/11 14:58:37 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/16 10:08:44 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static void	ft_free_helper(char *str)
+{
+	free(str);
+	exit(write(2, "Error\n", 7));
+}
 
 char	*ft_concat_params(char **args)
 {
@@ -35,5 +41,7 @@ char	*ft_concat_params(char **args)
 		result = tmp_result;
 		i++;
 	}
+	if (!ft_is_valid_input(result))
+		ft_free_helper(result);
 	return (tmp_result);
 }
