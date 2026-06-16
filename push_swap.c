@@ -6,11 +6,24 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 09:07:59 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/15 13:23:37 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/16 10:16:48 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static void ft_print_params(long *array, int *counter)
+{
+	int i;
+	
+	i = 0;
+	while (i < *counter)
+	{
+		ft_printf("numeros = [%d] ", array[i]);
+		i++;
+	}
+	ft_printf("finalzacion de la ejecuion \n");
+}
 
 long	*ft_to_array(char *str, int *counter)
 {
@@ -36,33 +49,24 @@ long	*ft_to_array(char *str, int *counter)
 
 int	main(int argc, char **argv)
 {
-	char	*result;
 	long	*array;
 	int		counter;
-	int		i;
 
 	counter = 0;
 	if (argc <= 1)
 		return (0);
 	if (argc > 2)
 	{
-		result = ft_concat_params(argv);
-		array = ft_to_array(result, &counter);
+		array = ft_to_array(ft_concat_params(argv), &counter);
 		ft_arr_to_lst(array, &counter);
 	}
 	else
 	{
 		if (!ft_is_valid_input(argv[1]))
-			return (ft_printf("Error \n"));
+			return (write(2, "Error\n", 7));
 		array = ft_to_array(ft_strdup(argv[1]), &counter);
 		ft_arr_to_lst(array, &counter);
 	}
-	i = 0;
-	while (i < counter)
-	{
-		ft_printf("numeros = [%d] ", array[i]);
-		i++;
-	}
-	ft_printf("finalzacion de la ejecuion \n");
+	ft_print_params(array, &counter);
 	return (free(array), 0);
 }

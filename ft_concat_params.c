@@ -6,7 +6,7 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/11 12:14:08 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/16 09:56:39 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/16 10:08:44 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static void	ft_free_helper(char *str)
 {
 	free(str);
-	exit(write(2, "Error \n", 8));
+	exit(write(2, "Error\n", 7));
 }
 
 char	*ft_concat_params(char **args)
