@@ -3,10 +3,10 @@
 #                                                          :::      ::::::::   #
 #   Makefile                                             :+:      :+:    :+:   #
 #                                                      +:+ +:+         +:+     #
-#   By: omarquez <omarquez@student.42urduliz.com>    +#+  +:+       +#+        #
+#   By: khurtado <khurtado@student.42urduliz.com>    +#+  +:+       +#+        #
 #                                                  +#+#+#+#+#+   +#+           #
 #   Created: 2026/06/05 09:12:44 by omarquez            #+#    #+#             #
-#   Updated: 2026/06/15 13:12:19 by omarquez           ###   ########.fr       #
+#   Updated: 2026/06/16 12:59:09 by khurtado           ###   ########.fr       #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ INCLUDES = -I./printf
 SRCS = 	push_swap.c ft_dlstlast.c ft_dlstsize.c ft_dlstadd_back.c ft_dlstnew.c \
 		ft_dlstadd_front.c ft_is_valid_input.c ft_is_duplicate.c ft_is_flag.c  \
 		ft_concat_params.c ft_atol.c ft_is_overflow.c ft_arr_to_lst.c	\
-		ft_calculate_disorder.c
+		ft_calculate_disorder.c ft_cmplx_slctr.c 
 OBJS = $(SRCS:.c=.o)
 
 PRINTF = printf/libftprintf.a
