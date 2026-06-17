@@ -1,39 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_concat_params.c                                 :+:      :+:    :+:   */
+/*   ft_copy_long_arr.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/11 12:14:08 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/17 12:55:10 by omarquez         ###   ########.fr       */
+/*   Created: 2026/06/17 12:39:06 by omarquez          #+#    #+#             */
+/*   Updated: 2026/06/17 12:41:35 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-char	*ft_concat_params(char **args)
+long	*ft_copy_long_arr(long *array, int array_len)
 {
-	char	*tmp_param;
-	char	*result;
-	char	*tmp_result;
-	int		i;
+	long	*array_cpy;
+	int		counter;
 
-	i = 1;
-	result = ft_strdup("");
-	while (args[i])
+	array_cpy = malloc(sizeof(long) * array_len);
+	counter = 0;
+	while(counter < array_len)
 	{
-		tmp_param = args[i];
-		tmp_result = ft_strjoin(result, tmp_param);
-		if (result)
-			free(result);
-		result = tmp_result;
-		tmp_param = args[i];
-		tmp_result = ft_strjoin(result, " ");
-		if (result)
-			free(result);
-		result = tmp_result;
-		i++;
+		array_cpy[counter] = array[counter];
+		counter ++;
 	}
-	return (tmp_result);
+	return (array_cpy);
 }
