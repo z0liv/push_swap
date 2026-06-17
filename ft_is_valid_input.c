@@ -6,7 +6,7 @@
 /*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 10:05:15 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/16 14:37:20 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/06/17 12:25:12 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,3 @@ int	ft_is_valid_input(char *input)
 	}
 	return (1);
 }
-/*  */

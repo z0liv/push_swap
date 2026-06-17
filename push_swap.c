@@ -6,7 +6,7 @@
 /*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 09:07:59 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/17 12:10:29 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/06/17 12:25:40 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,19 +50,19 @@ long	*ft_to_array(char *str, int *counter)
 int	main(int argc, char **argv)
 {
 	long	*array;
+	char	*concat;
 	int		counter;
 	char	*flag;
-	char	*concat;
 
 	counter = 0;
-	flag = ft_strdup("");
 	if (argc <= 1)
 		return (0);
 	else
 	{
 		concat = ft_concat_params(argv);
+		flag = (ft_flag_detector(&concat));
 		if (!ft_is_valid_input(concat))
-			return (write(2, "Error\n", 7));
+			return (free(flag),free(concat),write(2, "Error\n", 7));
 		array = ft_to_array(concat, &counter);
 		ft_arr_to_lst(array, &counter);
 	}
