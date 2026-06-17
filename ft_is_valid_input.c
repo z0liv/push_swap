@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_is_valid_input.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 10:05:15 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/15 10:20:10 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/17 12:25:12 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
