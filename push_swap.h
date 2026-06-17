@@ -6,7 +6,7 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 09:10:23 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/16 14:24:42 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/17 09:28:31 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ typedef struct s_d_list
 void		ft_dlstadd_back(t_d_list **lst, t_d_list *new);
 t_d_list	*ft_dlstnew(int content, int index);
 t_d_list	*ft_dlstlast(t_d_list *lst);
-void		ft_dlstclear(t_d_list **lst);
+void		ft_dlstclear(t_d_list **lst, int *array_len);
 
 int			ft_is_valid_input(char *input);
 int			ft_is_duplicate(long *array, int array_len);
