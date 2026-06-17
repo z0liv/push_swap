@@ -6,7 +6,7 @@
 /*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 09:10:23 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/17 12:05:15 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/06/17 12:07:24 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void		ft_dlstclear(t_d_list **lst, int *array_len);
 int			ft_is_valid_input(char *input);
 int			ft_is_duplicate(long *array, int array_len);
 int			ft_is_overflow(long *array, int array_len);
-int			ft_arr_to_lst(long	*arr, int *counter, char *flag);
+int			ft_arr_to_lst(long	*arr, int *counter);
 char		*ft_concat_params(char **args);
 long int	ft_atol(const char *str);
 float		ft_calculate_disorder(int *array, int *counter);

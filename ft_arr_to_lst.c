@@ -6,16 +6,15 @@
 /*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 10:28:09 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/17 12:04:48 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/06/17 12:07:52 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	ft_free_helper(long *arr, char *flag)
+static void	ft_free_helper(long *arr)
 {
 	free(arr);
-	free(flag);
 	exit(write(2, "Error\n", 7));
 }
 
