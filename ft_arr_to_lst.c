@@ -6,7 +6,7 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 10:28:09 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/17 13:03:25 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/17 13:19:20 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,22 +43,21 @@ int	ft_arr_to_lst(long	*arr, int *array_len, char *flag)
 	int			counter;
 
 	head = NULL;
-	counter = 0;
+	counter = -1;
 	sorted_arr = ft_sort_array(arr, *array_len);
 	if (ft_is_overflow(arr, *array_len) || ft_is_duplicate(arr, *array_len))
 		ft_free_helper(arr, sorted_arr, flag);
-	while (counter < *array_len)
+	while (++counter < *array_len)
 	{
 		if (counter == 0)
-		{
-			head = ft_dlstnew(arr[counter], counter, ft_find_norm_index(arr[counter], sorted_arr, *array_len));
-			counter ++;
-		}
+			head = ft_dlstnew(arr[counter],
+					counter,
+					ft_find_norm_index(arr[counter], sorted_arr, *array_len));
 		else
-		{
-			ft_dlstadd_back(&head, ft_dlstnew(arr[counter], counter, ft_find_norm_index(arr[counter], sorted_arr, *array_len)));
-			counter ++;
-		}
+			ft_dlstadd_back(&head,
+				ft_dlstnew(arr[counter],
+					counter,
+					ft_find_norm_index(arr[counter], sorted_arr, *array_len)));
 	}
 	ft_print_list(&head, array_len);
 	ft_dlstclear(&head, array_len);
