@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_flag_detector.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/16 10:21:24 by khurtado          #+#    #+#             */
-/*   Updated: 2026/06/17 12:22:56 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/06/17 13:13:04 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
 
 static int	ft_find_str(char *little, char *big)
 {
@@ -37,10 +36,10 @@ static int	ft_find_str(char *little, char *big)
 		letter2 = 0;
 		letter1++;
 	}
-	return (0);	
+	return (0);
 }
 
-static char *ft_helper(char **str, int size, char *flag)
+static char	*ft_helper(char **str, int size, char *flag)
 {
 	char	*temp;
 
@@ -48,22 +47,24 @@ static char *ft_helper(char **str, int size, char *flag)
 	free(*str);
 	*str = ft_strdup(temp + size);
 	free(temp);
-	return(ft_strdup(flag));
+	return (ft_strdup(flag));
 }
 
 char	*ft_flag_detector(char **str)
 {
 	char	*flag;
 
-	if(ft_find_str("--simple ", *str))
-		return (flag = (ft_helper(str,ft_strlen("--simple "), "--simple")));
+	if (ft_find_str("--simple ", *str))
+		return (flag = (ft_helper(str, ft_strlen("--simple "), "--simple")));
 	if (ft_find_str("--medium ", *str))
-		return (flag = (ft_helper(str,ft_strlen("--medium "), "--medium")));
+		return (flag = (ft_helper(str, ft_strlen("--medium "), "--medium")));
 	if (ft_find_str("--complex ", *str))
-		return (flag = (ft_helper(str,ft_strlen("--complex "),"--complex")));
+		return (flag = (ft_helper(str, ft_strlen("--complex "), "--complex")));
 	if (ft_find_str("--adaptive ", *str))
-		return (flag = (ft_helper(str,ft_strlen("--adaptive "),"--adaptive")));
+		return (flag = (ft_helper(str,
+					ft_strlen("--adaptive "),
+					"--adaptive")));
 	if (ft_find_str("--bench ", *str))
-		return (flag = (ft_helper(str,ft_strlen("--bench "),"--bench")));
+		return (flag = (ft_helper(str, ft_strlen("--bench "), "--bench")));
 	return (ft_strdup(""));
 }

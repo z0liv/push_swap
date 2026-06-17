@@ -6,7 +6,7 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 09:07:59 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/17 13:00:24 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/17 13:10:42 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,6 @@ int	main(int argc, char **argv)
 		ft_arr_to_lst(array, &counter, flag);
 	}
 	ft_print_params(array, &counter);
-	ft_printf("%s",flag);
-	return (free(flag),free(array), 0);
+	ft_printf("%s", flag);
+	return (free(flag), free(array), 0);
 }

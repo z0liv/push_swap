@@ -6,7 +6,7 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/17 12:39:06 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/17 12:41:35 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/17 13:14:03 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ long	*ft_copy_long_arr(long *array, int array_len)
 
 	array_cpy = malloc(sizeof(long) * array_len);
 	counter = 0;
-	while(counter < array_len)
+	while (counter < array_len)
 	{
 		array_cpy[counter] = array[counter];
 		counter ++;
