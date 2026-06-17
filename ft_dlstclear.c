@@ -3,28 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   ft_dlstclear.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 13:04:30 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/10 12:12:43 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/06/17 09:04:53 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* void	ft_dlstclear(t_d_list **lst, void (*del)(void*))
+void	ft_dlstclear(t_d_list **lst)
 {
 	t_d_list	*lsttmp;
 
-	if (!lst || !del)
+	if (!lst)
 		return ;
 	lsttmp = *lst;
-	while (*lst)
+	while (lsttmp->index < lsttmp->next->index)
 	{
 		lsttmp = (*lsttmp).next;
-		ft_dlstdelone(*lst, (*del));
+		free(*lst);
 		*lst = lsttmp;
 	}
 	free(*lst);
 	*lst = NULL;
-} */
+}

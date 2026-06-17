@@ -6,7 +6,7 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 13:06:08 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/16 12:04:15 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/16 13:23:12 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ t_d_list	*ft_dlstlast(t_d_list *lst)
 	t_d_list	*lst_cpy;
 
 	if (!lst)
-		return (0);
+		return (NULL);
+	if (!lst->next)
+		return (lst);
 	lst_cpy = lst;
 	while (lst_cpy->index < lst_cpy->next->index)
 	{

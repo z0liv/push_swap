@@ -6,7 +6,7 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 10:28:09 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/16 10:14:20 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/17 09:08:55 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,44 @@ static void	ft_free_helper(long *arr)
 	exit(write(2, "Error\n", 7));
 }
 
-int	ft_arr_to_lst(long	*arr, int *counter)
+/* static void ft_print_list(t_d_list **lst, int *array_len)
 {
-	if (ft_is_overflow(arr, *counter) || ft_is_duplicate(arr, *counter))
+	int			counter;
+	t_d_list	*lst_tmp;
+
+	counter = 0;
+	lst_tmp = (*lst);
+	while(counter < *array_len)
+	{
+		printf("%d \n", (lst_tmp)->content);
+		(lst_tmp) = (lst_tmp)->next;
+		counter ++;
+	}
+} */
+
+int	ft_arr_to_lst(long	*arr, int *array_len)
+{
+	/* t_d_list	*head;
+	int			counter;
+
+	head = NULL;
+	counter = 0; */
+	if (ft_is_overflow(arr, *array_len) || ft_is_duplicate(arr, *array_len))
 		ft_free_helper(arr);
+	/* while(counter < *array_len)
+	{
+		if (counter == 0)
+		{
+			head = ft_dlstnew(arr[counter], counter);
+			counter ++;
+		}
+		else
+		{
+			ft_dlstadd_back(&head, ft_dlstnew(arr[counter], counter));
+			counter ++;
+		}
+	}
+	ft_print_list(&head, array_len);
+	ft_dlstclear(&head); */
 	return (ft_printf("end of arr_to_lst \n"));
 }
