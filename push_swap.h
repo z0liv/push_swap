@@ -6,7 +6,7 @@
 /*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 09:10:23 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/16 14:31:49 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/06/17 12:05:15 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,19 +26,13 @@ typedef struct s_d_list
 	struct s_d_list	*prev;
 }	t_d_list;
 
-t_d_list	*ft_dlstnew(int content, int index);
 void		ft_dlstadd_back(t_d_list **lst, t_d_list *new);
-void		ft_dlstadd_front(t_d_list **lst, t_d_list *new);
+t_d_list	*ft_dlstnew(int content, int index);
 t_d_list	*ft_dlstlast(t_d_list *lst);
-int			ft_dlstsize(t_d_list *lst);
-//void		ft_dlstclear(t_d_list **lst, void (*del)(void*));
-//void		ft_dlstdelone(t_d_list *lst, void (*del)(void *));
-//void		ft_dlstiter(t_d_list *lst, void (*f)(void *));
-//t_d_list	*ft_dlstmap(t_d_list *lst, void *(*f)(void *), void (*del)(void *));
+void		ft_dlstclear(t_d_list **lst, int *array_len);
 
 int			ft_is_valid_input(char *input);
 int			ft_is_duplicate(long *array, int array_len);
-int			ft_is_flag(char *param);
 int			ft_is_overflow(long *array, int array_len);
 int			ft_arr_to_lst(long	*arr, int *counter, char *flag);
 char		*ft_concat_params(char **args);

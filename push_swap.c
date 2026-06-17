@@ -6,16 +6,16 @@
 /*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 09:07:59 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/16 15:02:19 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/06/17 12:04:27 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void ft_print_params(long *array, int *counter)
+static void	ft_print_params(long *array, int *counter)
 {
-	int i;
-	
+	int	i;
+
 	i = 0;
 	while (i < *counter)
 	{
@@ -50,6 +50,7 @@ long	*ft_to_array(char *str, int *counter)
 int	main(int argc, char **argv)
 {
 	long	*array;
+	char	*concat;
 	int		counter;
 	char	*flag;
 	char	*concat;
@@ -57,22 +58,14 @@ int	main(int argc, char **argv)
 	counter = 0;
 	flag = ft_strdup("");
 	if (argc <= 1)
-		return (free(flag), 0);
-	if (argc > 2)
-	{
-		concat = ft_concat_params(argv);
-		free(flag);
-		flag = ft_cmplx_slctr(concat);
-		array = ft_to_array(concat, &counter);
-		ft_arr_to_lst(array, &counter, flag);
-	}
+		return (0);
 	else
 	{
-		if (!ft_is_valid_input(argv[1]))
+		concat = ft_concat_params(argv);
+		if (!ft_is_valid_input(concat))
 			return (write(2, "Error\n", 7));
-		array = ft_to_array(ft_strdup(argv[1]), &counter);
-		flag = ft_cmplx_slctr(argv[1]);
-		ft_arr_to_lst(array, &counter, flag);
+		array = ft_to_array(concat, &counter);
+		ft_arr_to_lst(array, &counter);
 	}
 	ft_print_params(array, &counter);
 	ft_printf("%s",flag);
