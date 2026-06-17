@@ -6,7 +6,7 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 09:07:59 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/17 12:54:39 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/17 13:00:24 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,9 @@ int	main(int argc, char **argv)
 		concat = ft_concat_params(argv);
 		flag = (ft_flag_detector(&concat));
 		if (!ft_is_valid_input(concat))
-			return (free(flag),free(concat),write(2, "Error\n", 7));
+			return (free(flag), free(concat), write(2, "Error\n", 7));
 		array = ft_to_array(concat, &counter);
-		ft_arr_to_lst(array, &counter);
+		ft_arr_to_lst(array, &counter, flag);
 	}
 	ft_print_params(array, &counter);
 	ft_printf("%s",flag);
