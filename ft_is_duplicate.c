@@ -6,7 +6,7 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 10:23:31 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/15 12:31:27 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/16 12:03:59 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,9 @@ int	ft_is_duplicate(long *array, int array_len)
 	counter1 = 0;
 	while (counter1 < array_len - 1)
 	{
-		counter2 = 0;
+		counter2 = counter1 + 1;
 		while (counter2 < array_len)
 		{
-			if (counter1 == counter2)
-				counter2 ++;
 			if (array[counter1] == array[counter2])
 				return (1);
 			else

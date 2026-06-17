@@ -6,16 +6,16 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 09:07:59 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/16 10:16:48 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/17 09:13:46 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void ft_print_params(long *array, int *counter)
+static void	ft_print_params(long *array, int *counter)
 {
-	int i;
-	
+	int	i;
+
 	i = 0;
 	while (i < *counter)
 	{
@@ -50,21 +50,18 @@ long	*ft_to_array(char *str, int *counter)
 int	main(int argc, char **argv)
 {
 	long	*array;
+	char	*concat;
 	int		counter;
 
 	counter = 0;
 	if (argc <= 1)
 		return (0);
-	if (argc > 2)
-	{
-		array = ft_to_array(ft_concat_params(argv), &counter);
-		ft_arr_to_lst(array, &counter);
-	}
 	else
 	{
-		if (!ft_is_valid_input(argv[1]))
+		concat = ft_concat_params(argv);
+		if (!ft_is_valid_input(concat))
 			return (write(2, "Error\n", 7));
-		array = ft_to_array(ft_strdup(argv[1]), &counter);
+		array = ft_to_array(concat, &counter);
 		ft_arr_to_lst(array, &counter);
 	}
 	ft_print_params(array, &counter);
