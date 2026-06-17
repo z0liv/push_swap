@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 09:07:59 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/17 09:13:46 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/17 12:25:40 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ int	main(int argc, char **argv)
 	long	*array;
 	char	*concat;
 	int		counter;
+	char	*flag;
 
 	counter = 0;
 	if (argc <= 1)
@@ -59,11 +60,13 @@ int	main(int argc, char **argv)
 	else
 	{
 		concat = ft_concat_params(argv);
+		flag = (ft_flag_detector(&concat));
 		if (!ft_is_valid_input(concat))
-			return (write(2, "Error\n", 7));
+			return (free(flag),free(concat),write(2, "Error\n", 7));
 		array = ft_to_array(concat, &counter);
 		ft_arr_to_lst(array, &counter);
 	}
 	ft_print_params(array, &counter);
-	return (free(array), 0);
+	ft_printf("%s",flag);
+	return (free(flag),free(array), 0);
 }
