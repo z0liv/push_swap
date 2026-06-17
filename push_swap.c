@@ -6,7 +6,7 @@
 /*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 09:07:59 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/17 12:04:27 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/06/17 12:10:29 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ long	*ft_to_array(char *str, int *counter)
 int	main(int argc, char **argv)
 {
 	long	*array;
-	char	*concat;
 	int		counter;
 	char	*flag;
 	char	*concat;
