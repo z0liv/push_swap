@@ -6,17 +6,19 @@
 /*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 09:07:59 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/17 14:59:37 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/06/18 09:30:12 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	ft_print_params(long *array, int *counter)
+static void	ft_print_params(long *array, int *counter, char *flag)
 {
 	int	i;
 
 	i = 0;
+	if (ft_strlen(flag))
+		ft_printf("estrategia seleccionada = %s\n",flag + 2);
 	while (i < *counter)
 	{
 		ft_printf("numeros = [%d] ", array[i]);
@@ -53,6 +55,7 @@ int	main(int argc, char **argv)
 	char	*concat;
 	int		counter;
 	char	*flag;
+	char	*bench;
 
 	counter = 0;
 	if (argc <= 1)
@@ -60,13 +63,15 @@ int	main(int argc, char **argv)
 	else
 	{
 		concat = ft_concat_params(argv);
-		flag = (ft_flag_detector(&concat));
-		if (!ft_is_valid_input(concat))
-			return (free(flag), free(concat), write(2, "Error\n", 7));
+		bench = ft_bench_detector(&concat);
+		flag = ft_flag_detector(&concat);
+		if (!ft_is_valid_input(concat)
+			|| !(ft_strncmp(concat,"",ft_strlen(concat))))
+			return (free(bench), free(flag),
+				free(concat), write(2, "Error\n", 7));
 		array = ft_to_array(concat, &counter);
 		ft_arr_to_lst(array, &counter, flag);
 	}
-	ft_print_params(array, &counter);
-	ft_printf("%s", flag);
-	return (free(flag), free(array), 0);
+	ft_print_params(array, &counter, flag);
+	return (free(bench), free(flag), free(array), 0);
 }
