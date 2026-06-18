@@ -6,7 +6,7 @@
 /*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 09:07:59 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/18 09:30:12 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/06/18 14:01:01 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,30 +48,37 @@ long	*ft_to_array(char *str, int *counter)
 	}
 	return (ft_free_split(str2, *counter), array);
 }
+void ft_establish_flags(char **flags, char *concat)
+{
+	ft_free_split(flags, 2);
+	
+	flags[0] = ft_bench_detector(&concat);
+	flags[1] = ft_flag_detector(&concat);
+}
 
 int	main(int argc, char **argv)
 {
 	long	*array;
 	char	*concat;
 	int		counter;
-	char	*flag;
-	char	*bench;
+	char	**flags;
+	
 
 	counter = 0;
+	flags = ft_split("dos argumentos", ' ');
 	if (argc <= 1)
 		return (0);
 	else
 	{
 		concat = ft_concat_params(argv);
-		bench = ft_bench_detector(&concat);
-		flag = ft_flag_detector(&concat);
+		ft_establish_flags(flags, concat);
 		if (!ft_is_valid_input(concat)
 			|| !(ft_strncmp(concat,"",ft_strlen(concat))))
-			return (free(bench), free(flag),
+			return (ft_free_split(flags, 2),
 				free(concat), write(2, "Error\n", 7));
 		array = ft_to_array(concat, &counter);
-		ft_arr_to_lst(array, &counter, flag);
+		ft_arr_to_lst(array, &counter, flags);
 	}
-	ft_print_params(array, &counter, flag);
-	return (free(bench), free(flag), free(array), 0);
+	ft_print_params(array, &counter, flags[1]);
+	return (ft_free_split(flags, 2), free(array), 0);
 }

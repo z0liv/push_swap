@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_arr_to_lst.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 10:28:09 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/17 13:19:20 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/18 13:09:31 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	ft_free_helper(long *arr, long *sorted_arr, char *flag)
+static void	ft_free_helper(long *arr, long *sorted_arr, char **flag)
 {
 	free(arr);
 	free(sorted_arr);
-	free(flag);
+	ft_free_split(flag, 2);
 	exit(write(2, "Error\n", 7));
 }
 
@@ -36,7 +36,7 @@ static void	ft_print_list(t_d_list **lst, int *array_len)
 	}
 }
 
-int	ft_arr_to_lst(long	*arr, int *array_len, char *flag)
+int	ft_arr_to_lst(long	*arr, int *array_len, char **flag)
 {
 	t_d_list	*head;
 	long		*sorted_arr;

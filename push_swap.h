@@ -6,7 +6,7 @@
 /*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 09:10:23 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/18 08:53:53 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/06/18 12:42:54 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int			ft_is_valid_input(char *input);
 int			ft_is_duplicate(long *array, int array_len);
 int			ft_is_overflow(long *array, int array_len);
 //list manipulation
-int			ft_arr_to_lst(long	*arr, int *counter, char *flag);
+int			ft_arr_to_lst(long	*arr, int *counter, char **flag);
 long		*ft_copy_long_arr(long *array, int array_len);
 int			ft_find_norm_index(long num, long *sorted_arr, int array_len);
 //arguments manipulation
