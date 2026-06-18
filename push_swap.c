@@ -6,7 +6,7 @@
 /*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 09:07:59 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/18 14:01:01 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/06/18 21:20:28 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,12 +48,12 @@ long	*ft_to_array(char *str, int *counter)
 	}
 	return (ft_free_split(str2, *counter), array);
 }
-void ft_establish_flags(char **flags, char *concat)
+void ft_establish_flags(char **flags, char **concat)
 {
-	ft_free_split(flags, 2);
-	
-	flags[0] = ft_bench_detector(&concat);
-	flags[1] = ft_flag_detector(&concat);
+	free(flags[0]);
+	free(flags[1]);	
+	flags[0] = ft_bench_detector(concat);
+	flags[1] = ft_flag_detector(concat);
 }
 
 int	main(int argc, char **argv)
@@ -71,7 +71,7 @@ int	main(int argc, char **argv)
 	else
 	{
 		concat = ft_concat_params(argv);
-		ft_establish_flags(flags, concat);
+		ft_establish_flags(flags, &concat);
 		if (!ft_is_valid_input(concat)
 			|| !(ft_strncmp(concat,"",ft_strlen(concat))))
 			return (ft_free_split(flags, 2),
