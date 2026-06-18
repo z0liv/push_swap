@@ -6,7 +6,7 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 10:28:09 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/17 13:19:20 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/18 11:05:10 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ int	ft_arr_to_lst(long	*arr, int *array_len, char *flag)
 					ft_find_norm_index(arr[counter], sorted_arr, *array_len)));
 	}
 	ft_print_list(&head, array_len);
+	ft_printf("stack size: %d \n", ft_dlstsize(head));
 	ft_dlstclear(&head, array_len);
 	return (free(sorted_arr), ft_printf("end of arr_to_lst \n"));
 }

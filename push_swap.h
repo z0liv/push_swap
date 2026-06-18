@@ -6,7 +6,7 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 09:10:23 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/17 13:03:02 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/18 12:01:25 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,7 @@ long int	ft_atol(const char *str);
 long		*ft_sort_array(long *array, int array_len);
 float		ft_calculate_disorder(int *array, int *counter);
 char		*ft_flag_detector(char **str);
+char		*ft_swap_dlst(t_d_list **stack, char stack_name);
+int			ft_dlstsize(t_d_list *lst);
 
 #endif

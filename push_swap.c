@@ -6,13 +6,13 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 09:07:59 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/17 13:10:42 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/18 11:22:18 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	ft_print_params(long *array, int *counter)
+/* static void	ft_print_params(long *array, int *counter)
 {
 	int	i;
 
@@ -23,7 +23,7 @@ static void	ft_print_params(long *array, int *counter)
 		i++;
 	}
 	ft_printf("finalzacion de la ejecuion \n");
-}
+} */
 
 long	*ft_to_array(char *str, int *counter)
 {
@@ -47,7 +47,7 @@ long	*ft_to_array(char *str, int *counter)
 	return (ft_free_split(str2, *counter), array);
 }
 
-int	main(int argc, char **argv)
+/* int	main(int argc, char **argv)
 {
 	long	*array;
 	char	*concat;
@@ -69,4 +69,4 @@ int	main(int argc, char **argv)
 	ft_print_params(array, &counter);
 	ft_printf("%s", flag);
 	return (free(flag), free(array), 0);
-}
+} */
