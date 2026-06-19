@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 09:10:23 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/18 12:42:54 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/06/19 13:39:25 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,26 @@
 typedef struct s_d_list
 {
 	int				content;
-	int				index;
 	int				norm_index;
 	struct s_d_list	*next;
 	struct s_d_list	*prev;
 }	t_d_list;
 
-void		ft_dlstadd_back(t_d_list **lst, t_d_list *new);
-t_d_list	*ft_dlstnew(int content, int index, int norm_index);
-t_d_list	*ft_dlstlast(t_d_list *lst);
-void		ft_dlstclear(t_d_list **lst, int *array_len);
+typedef struct s_stack
+{
+	int			size;
+	t_d_list	*head;
+	t_d_list	*tail;
+}	t_stack;
+
+void		ft_dlstadd_back(t_stack *stack, t_d_list *new);
+void		ft_dlstclear(t_stack *stack, int *array_len);
+t_d_list	*ft_dlstnew(int content, int norm_index);
+t_stack		*ft_newstack(void);
+
+char		*ft_swap_dlst(t_stack *stack, char stack_name);
+char 		*ft_rotate_dlst(t_stack *stack, char stack_name);
+
 //validations
 int			ft_is_valid_input(char *input);
 int			ft_is_duplicate(long *array, int array_len);

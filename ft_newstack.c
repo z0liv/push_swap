@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_find_norm_index.c                               :+:      :+:    :+:   */
+/*   ft_newstack.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/17 12:15:23 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/19 09:43:50 by omarquez         ###   ########.fr       */
+/*   Created: 2026/06/19 09:35:02 by omarquez          #+#    #+#             */
+/*   Updated: 2026/06/19 09:40:56 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "push_swap.h"
 
-int	ft_find_norm_index(long num, long *sorted_arr, int array_len)
+t_stack	*ft_newstack(void)
 {
-	int	counter;
+	t_stack *new_stack;
 
-	counter = 0;
-	while (counter < array_len)
-	{
-		if (num == sorted_arr[counter])
-			return (counter);
-		counter ++;
-	}
-	return (counter);
+	new_stack = malloc(sizeof(t_stack));
+	new_stack->head = NULL;
+	new_stack->tail = NULL;
+	new_stack->size = 0;
+	return (new_stack);
 }
