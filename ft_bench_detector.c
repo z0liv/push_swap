@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_flag_detector.c                                 :+:      :+:    :+:   */
+/*   ft_bench_detector.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/16 10:21:24 by khurtado          #+#    #+#             */
-/*   Updated: 2026/06/18 08:50:26 by khurtado         ###   ########.fr       */
+/*   Created: 2026/06/18 08:51:11 by khurtado          #+#    #+#             */
+/*   Updated: 2026/06/18 21:19:59 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,19 +50,13 @@ static char	*ft_helper(char **str, int size, char *flag)
 	return (ft_strdup(flag));
 }
 
-char	*ft_flag_detector(char **str)
+char	*ft_bench_detector(char **str)
 {
 	char	*flag;
-
-	if (ft_find_str("--simple ", *str))
-		return (flag = (ft_helper(str, ft_strlen("--simple "), "--simple")));
-	if (ft_find_str("--medium ", *str))
-		return (flag = (ft_helper(str, ft_strlen("--medium "), "--medium")));
-	if (ft_find_str("--complex ", *str))
-		return (flag = (ft_helper(str, ft_strlen("--complex "), "--complex")));
-	if (ft_find_str("--adaptive ", *str))
-		return (flag = (ft_helper(str,
-					ft_strlen("--adaptive "),
-					"--adaptive")));
+	
+	if (ft_find_str("--bench ", *str))
+		return (flag = (ft_helper(str, ft_strlen("--bench "), "--bench")));
 	return (ft_strdup(""));
 }
+
+

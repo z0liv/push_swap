@@ -6,7 +6,7 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 09:10:23 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/19 10:06:57 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/19 13:39:25 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,16 +41,20 @@ t_stack		*ft_newstack(void);
 char		*ft_swap_dlst(t_stack *stack, char stack_name);
 char 		*ft_rotate_dlst(t_stack *stack, char stack_name);
 
+//validations
 int			ft_is_valid_input(char *input);
 int			ft_is_duplicate(long *array, int array_len);
 int			ft_is_overflow(long *array, int array_len);
-int			ft_arr_to_lst(long	*arr, int *counter, char *flag);
+//list manipulation
+int			ft_arr_to_lst(long	*arr, int *counter, char **flag);
 long		*ft_copy_long_arr(long *array, int array_len);
 int			ft_find_norm_index(long num, long *sorted_arr, int array_len);
+//arguments manipulation
 char		*ft_concat_params(char **args);
 long int	ft_atol(const char *str);
 long		*ft_sort_array(long *array, int array_len);
 float		ft_calculate_disorder(int *array, int *counter);
 char		*ft_flag_detector(char **str);
+char		*ft_bench_detector(char **str);
 
 #endif

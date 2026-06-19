@@ -6,7 +6,7 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 10:28:09 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/19 10:22:53 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/19 13:38:36 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static void	ft_print_list(t_stack *stack, int *array_len)
 	}
 }
 
-int	ft_arr_to_lst(long	*arr, int *array_len, char *flag)
+int	ft_arr_to_lst(long	*arr, int *array_len, char **flag)
 {
 	t_stack		*stack;
 	long		*sorted_arr;
