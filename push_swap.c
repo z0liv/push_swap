@@ -6,7 +6,7 @@
 /*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 09:07:59 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/18 21:20:28 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/06/19 09:58:42 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,9 +63,8 @@ int	main(int argc, char **argv)
 	int		counter;
 	char	**flags;
 	
-
 	counter = 0;
-	flags = ft_split("dos argumentos", ' ');
+	flags = ft_split(". . . . . .", ' ');
 	if (argc <= 1)
 		return (0);
 	else
@@ -74,11 +73,11 @@ int	main(int argc, char **argv)
 		ft_establish_flags(flags, &concat);
 		if (!ft_is_valid_input(concat)
 			|| !(ft_strncmp(concat,"",ft_strlen(concat))))
-			return (ft_free_split(flags, 2),
+			return (ft_free_split(flags, 6),
 				free(concat), write(2, "Error\n", 7));
 		array = ft_to_array(concat, &counter);
 		ft_arr_to_lst(array, &counter, flags);
 	}
 	ft_print_params(array, &counter, flags[1]);
-	return (ft_free_split(flags, 2), free(array), 0);
+	return (ft_free_split(flags, 6), free(array), 0);
 }
