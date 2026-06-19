@@ -6,7 +6,7 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 10:28:09 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/19 13:38:36 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/19 13:41:53 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	ft_free_helper(long *arr,
 		long *sorted_arr,
-		char *flag,
+		char **flag,
 		t_stack *stack)
 {
 	free(arr);
