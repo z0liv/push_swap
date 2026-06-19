@@ -6,27 +6,11 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/18 10:40:28 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/19 11:52:59 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/19 13:33:54 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-static void	ft_print_list(t_stack *stack, int *array_len)
-{
-	int			counter;
-	t_d_list	*lst_tmp;
-
-	counter = 0;
-	lst_tmp = stack->head;
-	while (counter < *array_len)
-	{
-		printf("content: %d \n", (lst_tmp)->content);
-		printf("norm_index: %d \n", (lst_tmp)->norm_index);
-		(lst_tmp) = (lst_tmp)->next;
-		counter ++;
-	}
-}
 
 char	*ft_swap_dlst(t_stack *stack, char stack_name)
 {
@@ -45,7 +29,7 @@ char	*ft_swap_dlst(t_stack *stack, char stack_name)
 		return ("sa");
 	return ("sb");
 }
-int	main(void)
+/* int	main(void)
 {
 	t_stack		*stack;
 	int			len;
@@ -71,4 +55,4 @@ int	main(void)
 
 	ft_dlstclear(stack, &len);
 	return (0);
-}
+} */

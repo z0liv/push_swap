@@ -6,7 +6,7 @@
 #   By: omarquez <omarquez@student.42urduliz.com>    +#+  +:+       +#+        #
 #                                                  +#+#+#+#+#+   +#+           #
 #   Created: 2026/06/05 09:12:44 by omarquez            #+#    #+#             #
-#   Updated: 2026/06/19 10:02:29 by omarquez           ###   ########.fr       #
+#   Updated: 2026/06/19 13:33:07 by omarquez           ###   ########.fr       #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ NAME = push_swap
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 INCLUDES = -I./printf
+OBJS_DIR = objs
 
 SRCS = 	push_swap.c ft_dlstadd_back.c ft_dlstnew.c ft_atol.c\
 		ft_is_valid_input.c ft_is_duplicate.c ft_calculate_disorder.c\
@@ -23,24 +24,25 @@ SRCS = 	push_swap.c ft_dlstadd_back.c ft_dlstnew.c ft_atol.c\
 		ft_flag_detector.c ft_swap_dlst.c ft_rotate_dlst.c \
 		ft_newstack.c
 		
-OBJS = $(SRCS:.c=.o)
+OBJS = $(SRCS:%.c=$(OBJS_DIR)/%.o)
 
 PRINTF = printf/libftprintf.a
 
 all: $(NAME)
 
 $(NAME): $(OBJS) $(PRINTF)
-	$(CC) $(CFLAGS) $(OBJS) $(PRINTF) -o $(NAME)
+	$(CC) $(CFLAGS) $(PRINTF) -o $@ $^
 
 $(PRINTF):
 	$(MAKE) -C printf
 
-%.o: %.c
+$(OBJS_DIR)/%.o: %.c
+	@mkdir -p $(OBJS_DIR)
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 clean:
 	$(MAKE) clean -C printf
-	rm -f $(OBJS)
+	rm -rf $(OBJS_DIR)
 
 fclean: clean
 	$(MAKE) fclean -C printf
