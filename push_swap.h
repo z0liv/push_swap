@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 09:10:23 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/17 13:03:02 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/18 12:42:54 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,17 +31,20 @@ void		ft_dlstadd_back(t_d_list **lst, t_d_list *new);
 t_d_list	*ft_dlstnew(int content, int index, int norm_index);
 t_d_list	*ft_dlstlast(t_d_list *lst);
 void		ft_dlstclear(t_d_list **lst, int *array_len);
-
+//validations
 int			ft_is_valid_input(char *input);
 int			ft_is_duplicate(long *array, int array_len);
 int			ft_is_overflow(long *array, int array_len);
-int			ft_arr_to_lst(long	*arr, int *counter, char *flag);
+//list manipulation
+int			ft_arr_to_lst(long	*arr, int *counter, char **flag);
 long		*ft_copy_long_arr(long *array, int array_len);
 int			ft_find_norm_index(long num, long *sorted_arr, int array_len);
+//arguments manipulation
 char		*ft_concat_params(char **args);
 long int	ft_atol(const char *str);
 long		*ft_sort_array(long *array, int array_len);
 float		ft_calculate_disorder(int *array, int *counter);
 char		*ft_flag_detector(char **str);
+char		*ft_bench_detector(char **str);
 
 #endif
