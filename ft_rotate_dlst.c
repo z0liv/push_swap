@@ -1,51 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap_dlst.c                                     :+:      :+:    :+:   */
+/*   ft_rotate_dlst.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/18 10:40:28 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/19 11:52:59 by omarquez         ###   ########.fr       */
+/*   Created: 2026/06/18 12:03:58 by omarquez          #+#    #+#             */
+/*   Updated: 2026/06/19 11:52:53 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	ft_print_list(t_stack *stack, int *array_len)
+char *ft_rotate_dlst(t_stack *stack, char stack_name)
 {
-	int			counter;
-	t_d_list	*lst_tmp;
+	t_d_list	*stack_first;
+	t_d_list	*tmp_node;
 
-	counter = 0;
-	lst_tmp = stack->head;
-	while (counter < *array_len)
-	{
-		printf("content: %d \n", (lst_tmp)->content);
-		printf("norm_index: %d \n", (lst_tmp)->norm_index);
-		(lst_tmp) = (lst_tmp)->next;
-		counter ++;
-	}
-}
-
-char	*ft_swap_dlst(t_stack *stack, char stack_name)
-{
-	int	tmp_content;
-	int	tmp_norm_index;
-
+	stack_first = stack->head;
 	if (stack->size <= 1)
-	return (NULL);	
-	tmp_content = stack->head->content;
-	tmp_norm_index = stack->head->norm_index;
-	stack->head->content = stack->head->next->content;
-	stack->head->norm_index = stack->head->next->norm_index;
-	stack->head->next->content = tmp_content;
-	stack->head->next->norm_index = tmp_norm_index;
+		return (NULL);
+	tmp_node = stack_first->next;
+	stack->tail = stack_first;
+	stack->head = tmp_node; 
 	if (stack_name == 'a')
 		return ("sa");
 	return ("sb");
 }
-int	main(void)
+
+/* int	main(void)
 {
 	t_stack		*stack;
 	int			len;
@@ -59,9 +42,9 @@ int	main(void)
 	// Test content
 	ft_print_list(stack, &len);
 	
-	printf("OPERATION: %s \n", ft_swap_dlst(stack, 'b'));
+	printf("OPERATION: %s \n", ft_rotate_dlst(stack, 'b'));
 	
-	printf("\n------------------------swap-----------------------\n");
+	printf("\n------------------------rotate-----------------------\n");
 	
 	printf("new prev of head: %d", stack->head->prev->content);
 	printf("\n-----------------------------------------------\n");
@@ -71,4 +54,4 @@ int	main(void)
 
 	ft_dlstclear(stack, &len);
 	return (0);
-}
+} */

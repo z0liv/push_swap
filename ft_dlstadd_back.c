@@ -6,28 +6,30 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 13:07:53 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/16 12:35:38 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/19 11:39:49 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_dlstadd_back(t_d_list **lst, t_d_list *new)
+void	ft_dlstadd_back(t_stack *stack, t_d_list *new)
 {
-	t_d_list	*last;
-
-	if (!lst || !new)
+	if (!stack || !new)
 		return ;
-	last = ft_dlstlast(*lst);
-	if (!last)
+	if (!stack->head)
 	{
-		*lst = new;
-		return ;
+		stack->head = new;
+		stack->tail = new;
 	}
-	(*lst)->prev = new;
-	last->next = new;
-	new->prev = last;
-	new->next = *lst;
+	else
+	{
+		new->prev = stack->tail;
+		stack->tail->next = new;
+		stack->tail = new;
+	}
+	stack->head->prev = stack->tail;
+	stack->tail->next = stack->head;
+	stack->size ++;
 }
 /*
 int	main(void)

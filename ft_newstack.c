@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dlstsize.c                                      :+:      :+:    :+:   */
+/*   ft_newstack.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/18 10:49:20 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/18 11:09:21 by omarquez         ###   ########.fr       */
+/*   Created: 2026/06/19 09:35:02 by omarquez          #+#    #+#             */
+/*   Updated: 2026/06/19 09:40:56 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "push_swap.h"
 
-int	ft_dlstsize(t_d_list *lst)
+t_stack	*ft_newstack(void)
 {
-	int			counter;
-	t_d_list	*lst_cpy;
+	t_stack *new_stack;
 
-	counter = 0;
-	lst_cpy = lst;
-	if (!lst)
-		return (0);
-	if (!lst->next)
-		return (1);
-	while (lst_cpy->index < lst_cpy->next->index)
-	{
-		lst_cpy = lst_cpy->next;
-		counter ++;
-	}
-	counter ++;
-	return (counter);
+	new_stack = malloc(sizeof(t_stack));
+	new_stack->head = NULL;
+	new_stack->tail = NULL;
+	new_stack->size = 0;
+	return (new_stack);
 }
