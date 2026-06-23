@@ -6,7 +6,7 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 09:10:23 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/23 12:37:12 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/23 15:21:30 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,19 +35,19 @@ typedef struct s_stack
 
 typedef struct s_bench
 {
-	float	disorder;
 	char	*strategy;
-	size_t	sa;
-	size_t	sb;
-	size_t	ss;
-	size_t	pa;
-	size_t	pb;
-	size_t	ra;
-	size_t	rb;
-	size_t	rr;
-	size_t	rra;
-	size_t	rrb;
-	size_t	rrr;
+	float	*disorder;
+	size_t		*sa;
+	size_t		*sb;
+	size_t		*ss;
+	size_t		*pa;
+	size_t		*pb;
+	size_t		*ra;
+	size_t		*rb;
+	size_t		*rr;
+	size_t		*rra;
+	size_t		*rrb;
+	size_t		*rrr;
 
 }	t_bench;
 
@@ -62,6 +62,8 @@ char		*ft_rotate_dlst(t_stack *stack, char stack_name, t_bench *bench);
 char		*ft_rotate_both(t_stack *stack_a, t_stack *stack_b, t_bench *bench);
 
 void		ft_init_bench(t_bench *bench);
+void		ft_print_bench(t_bench *bench);
+void		ft_clean_bench(t_bench *bench);
 
 //validations
 int			ft_is_valid_input(char *input);
