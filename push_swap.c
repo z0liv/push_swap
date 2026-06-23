@@ -6,7 +6,7 @@
 /*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 09:07:59 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/19 11:56:15 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/06/23 09:29:25 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,15 @@ int	main(int argc, char **argv)
 	char	**flags;
 	
 	counter = 0;
-	flags = ft_split(". . . . . .", ' ');
+	flags = ft_split(". .", ' ');
 	if (argc <= 1)
 		return (0);
 	concat = ft_concat_params(argv);
 	ft_establish_flags(flags, &concat);
 	if (!ft_is_valid_input(concat)
 		|| !(ft_strncmp(concat,"",ft_strlen(concat))))
-		return (ft_free_split(flags, 6),
+		return (ft_free_split(flags, 2),
 			free(concat), write(2, "Error\n", 7));
 	ft_selector(concat, &counter, flags);
-	return (ft_free_split(flags, 6), 0);
+	return (ft_free_split(flags, 2), 0);
 }

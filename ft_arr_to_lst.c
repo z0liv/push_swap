@@ -6,7 +6,7 @@
 /*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 10:28:09 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/19 13:42:55 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/06/23 09:29:50 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static void	ft_free_helper(long *arr, long *sorted_arr, char **flag)
 {
 	free(arr);
 	free(sorted_arr);
-	ft_free_split(flag, 6);
+	ft_free_split(flag, 2);
 	exit(write(2, "Error\n", 7));
 }
 
