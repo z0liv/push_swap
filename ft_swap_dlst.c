@@ -6,7 +6,7 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/18 10:40:28 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/23 10:56:30 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/23 12:32:15 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_swap_dlst(t_stack *stack, char stack_name, t_bench *bench)
 	int	tmp_norm_index;
 
 	if (stack->size <= 1)
-	return (NULL);	
+		return (NULL);
 	tmp_content = stack->head->content;
 	tmp_norm_index = stack->head->norm_index;
 	stack->head->content = stack->head->next->content;

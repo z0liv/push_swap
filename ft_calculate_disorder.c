@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calculate_disorder.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 12:38:17 by khurtado          #+#    #+#             */
-/*   Updated: 2026/06/19 12:34:27 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/06/23 12:36:16 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ float	ft_calculate_disorder(long *array, int *counter)
 	total_pairs = 0.00f;
 	tmpcounter = *counter;
 	if (tmpcounter < 2)
-    	return (0.0f);
+		return (0.0f);
 	while (index < tmpcounter)
 	{
 		index2 = index +1;
