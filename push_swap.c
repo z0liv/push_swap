@@ -6,7 +6,7 @@
 /*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 09:07:59 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/23 09:29:25 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/06/23 09:32:48 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,3 +39,4 @@ int	main(int argc, char **argv)
 	ft_selector(concat, &counter, flags);
 	return (ft_free_split(flags, 2), 0);
 }
+
