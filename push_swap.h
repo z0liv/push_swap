@@ -6,7 +6,7 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 09:10:23 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/23 11:44:14 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/23 12:37:12 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,10 +58,10 @@ t_stack		*ft_newstack(void);
 
 char		*ft_swap_dlst(t_stack *stack, char stack_name, t_bench *bench);
 char		*ft_swap_both(t_stack *stack_a, t_stack *stack_b, t_bench *bench);
-char 		*ft_rotate_dlst(t_stack *stack, char stack_name, t_bench *bench);
+char		*ft_rotate_dlst(t_stack *stack, char stack_name, t_bench *bench);
 char		*ft_rotate_both(t_stack *stack_a, t_stack *stack_b, t_bench *bench);
 
-void	ft_init_bench(t_bench *bench);
+void		ft_init_bench(t_bench *bench);
 
 //validations
 int			ft_is_valid_input(char *input);

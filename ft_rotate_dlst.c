@@ -6,13 +6,13 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/18 12:03:58 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/23 10:50:25 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/23 12:31:03 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-char *ft_rotate_dlst(t_stack *stack, char stack_name, t_bench *bench)
+char	*ft_rotate_dlst(t_stack *stack, char stack_name, t_bench *bench)
 {
 	t_d_list	*stack_first;
 	t_d_list	*tmp_node;
@@ -22,7 +22,7 @@ char *ft_rotate_dlst(t_stack *stack, char stack_name, t_bench *bench)
 		return (NULL);
 	tmp_node = stack_first->next;
 	stack->tail = stack_first;
-	stack->head = tmp_node; 
+	stack->head = tmp_node;
 	if (stack_name == 'a')
 	{
 		bench->ra ++;
