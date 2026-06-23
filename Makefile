@@ -3,10 +3,10 @@
 #                                                          :::      ::::::::   #
 #   Makefile                                             :+:      :+:    :+:   #
 #                                                      +:+ +:+         +:+     #
-#   By: omarquez <omarquez@student.42urduliz.com>    +#+  +:+       +#+        #
+#   By: khurtado <khurtado@student.42urduliz.com>    +#+  +:+       +#+        #
 #                                                  +#+#+#+#+#+   +#+           #
 #   Created: 2026/06/05 09:12:44 by omarquez            #+#    #+#             #
-#   Updated: 2026/06/19 13:38:47 by omarquez           ###   ########.fr       #
+#   Updated: 2026/06/23 09:34:59 by khurtado           ###   ########.fr       #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,8 +21,9 @@ SRCS = 	push_swap.c ft_dlstadd_back.c ft_dlstnew.c ft_atol.c\
 		ft_is_valid_input.c ft_is_duplicate.c ft_calculate_disorder.c\
 		ft_concat_params.c ft_is_overflow.c ft_arr_to_lst.c	ft_dlstclear.c\
 		ft_find_norm_index.c ft_sort_array.c ft_copy_long_arr.c \
-		ft_flag_detector.c ft_swap_dlst.c ft_rotate_dlst.c \
-		ft_newstack.c ft_flag_detector.c ft_bench_detector.c
+		ft_find_str.c ft_resize.c ft_flag_detector.c ft_bench_detector.c\
+		ft_selector.c ft_to_array.c ft_flag_detector.c ft_swap_dlst.c\
+		ft_rotate_dlst.c ft_newstack.c ft_flag_detector.c ft_bench_detector.c\
 		
 OBJS = $(SRCS:%.c=$(OBJS_DIR)/%.o)
 

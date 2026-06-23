@@ -6,13 +6,13 @@
 /*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 12:38:17 by khurtado          #+#    #+#             */
-/*   Updated: 2026/06/15 12:41:45 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/06/19 12:34:27 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-float	ft_calculate_disorder(int *array, int *counter)
+float	ft_calculate_disorder(long *array, int *counter)
 {
 	float	mistakes;
 	float	total_pairs;
@@ -21,9 +21,11 @@ float	ft_calculate_disorder(int *array, int *counter)
 	int		tmpcounter;
 
 	index = 0;
-	mistakes = 0;
-	total_pairs = 0;
+	mistakes = 0.00f;
+	total_pairs = 0.00f;
 	tmpcounter = *counter;
+	if (tmpcounter < 2)
+    	return (0.0f);
 	while (index < tmpcounter)
 	{
 		index2 = index +1;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 09:10:23 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/19 13:39:25 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/23 09:33:26 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,14 @@ int			ft_find_norm_index(long num, long *sorted_arr, int array_len);
 char		*ft_concat_params(char **args);
 long int	ft_atol(const char *str);
 long		*ft_sort_array(long *array, int array_len);
-float		ft_calculate_disorder(int *array, int *counter);
+float		ft_calculate_disorder(long *array, int *counter);
+
+char		*ft_resize(char **str, int size, char *flag);
+int			ft_find_str(char *little, char *big);
 char		*ft_flag_detector(char **str);
 char		*ft_bench_detector(char **str);
+
+void		ft_selector(char *concat, int *counter,char **flags);
+long		*ft_to_array(char *str, int *counter);
 
 #endif

@@ -1,24 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bench_detector.c                                :+:      :+:    :+:   */
+/*   ft_to_array.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/18 08:51:11 by khurtado          #+#    #+#             */
-/*   Updated: 2026/06/19 10:08:35 by khurtado         ###   ########.fr       */
+/*   Created: 2026/06/19 11:53:07 by khurtado          #+#    #+#             */
+/*   Updated: 2026/06/19 11:53:12 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-char	*ft_bench_detector(char **str)
+long	*ft_to_array(char *str, int *counter)
 {
-	char	*flag;
-	
-	if (ft_find_str("--bench ", *str))
-		return (flag = (ft_resize(str, ft_strlen("--bench "), "--bench")));
-	return (ft_strdup(""));
+	char	**str2;
+	long	*array;
+	int		nmbrs;
+
+	nmbrs = 0;
+	str2 = ft_split(str, ' ');
+	free(str);
+	while (str2[*counter])
+		*counter += 1;
+	array = malloc(sizeof(long) * (*counter));
+	if (!array)
+		return (ft_free_split(str2, *counter), NULL);
+	while (nmbrs < *counter)
+	{
+		array[nmbrs] = ft_atol(str2[nmbrs]);
+		nmbrs++;
+	}
+	return (ft_free_split(str2, *counter), array);
 }
-
-

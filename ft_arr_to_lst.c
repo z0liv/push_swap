@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_arr_to_lst.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 10:28:09 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/19 13:41:53 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/23 09:35:28 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
