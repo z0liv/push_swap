@@ -6,7 +6,7 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 10:28:09 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/23 10:31:26 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/23 12:29:40 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 static void	ft_free_helper(long *arr,
 		long *sorted_arr,
-		char **flags,
 		t_stack *stack,
 		t_bench *bench)
 {
@@ -22,7 +21,6 @@ static void	ft_free_helper(long *arr,
 	free(stack);
 	free(bench);
 	free(sorted_arr);
-	ft_free_split(flags, 2);
 	exit(write(2, "Error\n", 7));
 }
 
@@ -53,7 +51,10 @@ int	ft_arr_to_lst(long	*arr, int *array_len,
 	counter = -1;
 	sorted_arr = ft_sort_array(arr, *array_len);
 	if (ft_is_overflow(arr, *array_len) || ft_is_duplicate(arr, *array_len))
-		ft_free_helper(arr, sorted_arr, flags, stack, bench);
+	{
+		ft_free_split(flags, 2);
+		ft_free_helper(arr, sorted_arr, stack, bench);
+	}
 	while (++counter < *array_len)
 	{
 		ft_dlstadd_back(stack,
