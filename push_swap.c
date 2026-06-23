@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 09:07:59 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/23 09:32:48 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/06/23 11:54:50 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,18 +25,22 @@ int	main(int argc, char **argv)
 	char	*concat;
 	int		counter;
 	char	**flags;
+	t_bench *bench;
 	
 	counter = 0;
-	flags = ft_split(". .", ' ');
+	
 	if (argc <= 1)
 		return (0);
+	bench = malloc(sizeof(t_bench));
+	ft_init_bench(bench);
+	flags = ft_split(". .", ' ');
 	concat = ft_concat_params(argv);
 	ft_establish_flags(flags, &concat);
 	if (!ft_is_valid_input(concat)
-		|| !(ft_strncmp(concat,"",ft_strlen(concat))))
-		return (ft_free_split(flags, 2),
-			free(concat), write(2, "Error\n", 7));
-	ft_selector(concat, &counter, flags);
-	return (ft_free_split(flags, 2), 0);
+	|| !(ft_strncmp(concat,"",ft_strlen(concat))))
+	return (ft_free_split(flags, 2),
+	free(concat), free(bench), write(2, "Error\n", 7));
+	ft_selector(concat, &counter, flags, bench);
+	return (free(bench), ft_free_split(flags, 2), 0);
 }
 

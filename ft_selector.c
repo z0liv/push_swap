@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_selector.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/19 11:41:28 by khurtado          #+#    #+#             */
-/*   Updated: 2026/06/19 13:45:03 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/06/23 11:54:54 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void ft_ordenado()
+void ft_sorted()
 {
 	ft_printf(" el string esta ordenado\n");
 }
@@ -46,22 +46,24 @@ static void	ft_print_params(long *array, int *counter,
 	ft_printf("finalzacion de la ejecuion \n");
 }
 
-void	ft_selector(char *concat, int *counter, char **flags)
+void	ft_selector(char *concat, int *counter,
+				char **flags, t_bench *bench)
 {
 	long		*array;
 	float		disorder;
 
 	array = ft_to_array(concat, counter);
 	disorder = ft_calculate_disorder(array, counter);
+	bench->disorder = disorder;
 	if (disorder == 0.0)
-		ft_ordenado();
+		ft_sorted();
 	else if(disorder < 0.2)
 		ft_simple();
 	else if(disorder >= 0.2 && disorder < 0.5)
 		ft_medium();
 	else if(disorder >= 0.5)
 		ft_complex();
-	ft_arr_to_lst(array, counter, flags);
+	ft_arr_to_lst(array, counter, flags, bench);
 	ft_print_params(array, counter, flags[1], &disorder);
 	free(array);
 }

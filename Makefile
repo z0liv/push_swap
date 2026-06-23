@@ -3,10 +3,10 @@
 #                                                          :::      ::::::::   #
 #   Makefile                                             :+:      :+:    :+:   #
 #                                                      +:+ +:+         +:+     #
-#   By: khurtado <khurtado@student.42urduliz.com>    +#+  +:+       +#+        #
+#   By: omarquez <omarquez@student.42urduliz.com>    +#+  +:+       +#+        #
 #                                                  +#+#+#+#+#+   +#+           #
 #   Created: 2026/06/05 09:12:44 by omarquez            #+#    #+#             #
-#   Updated: 2026/06/23 09:34:59 by khurtado           ###   ########.fr       #
+#   Updated: 2026/06/23 11:46:22 by omarquez           ###   ########.fr       #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,7 @@ SRCS = 	push_swap.c ft_dlstadd_back.c ft_dlstnew.c ft_atol.c\
 		ft_find_str.c ft_resize.c ft_flag_detector.c ft_bench_detector.c\
 		ft_selector.c ft_to_array.c ft_flag_detector.c ft_swap_dlst.c\
 		ft_rotate_dlst.c ft_newstack.c ft_flag_detector.c ft_bench_detector.c\
+		ft_init_bench.c ft_rotate_both.c ft_swap_both.c
 		
 OBJS = $(SRCS:%.c=$(OBJS_DIR)/%.o)
 

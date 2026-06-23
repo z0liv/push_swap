@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_arr_to_lst.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 10:28:09 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/23 09:35:28 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/06/23 10:31:26 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,15 @@
 
 static void	ft_free_helper(long *arr,
 		long *sorted_arr,
-		char **flag,
-		t_stack *stack)
+		char **flags,
+		t_stack *stack,
+		t_bench *bench)
 {
 	free(arr);
-	free(sorted_arr);
-	free(flag);
 	free(stack);
+	free(bench);
+	free(sorted_arr);
+	ft_free_split(flags, 2);
 	exit(write(2, "Error\n", 7));
 }
 
@@ -40,7 +42,8 @@ static void	ft_print_list(t_stack *stack, int *array_len)
 	}
 }
 
-int	ft_arr_to_lst(long	*arr, int *array_len, char **flag)
+int	ft_arr_to_lst(long	*arr, int *array_len,
+				char **flags, t_bench *bench)
 {
 	t_stack		*stack;
 	long		*sorted_arr;
@@ -50,7 +53,7 @@ int	ft_arr_to_lst(long	*arr, int *array_len, char **flag)
 	counter = -1;
 	sorted_arr = ft_sort_array(arr, *array_len);
 	if (ft_is_overflow(arr, *array_len) || ft_is_duplicate(arr, *array_len))
-		ft_free_helper(arr, sorted_arr, flag, stack);
+		ft_free_helper(arr, sorted_arr, flags, stack, bench);
 	while (++counter < *array_len)
 	{
 		ft_dlstadd_back(stack,
@@ -58,7 +61,6 @@ int	ft_arr_to_lst(long	*arr, int *array_len, char **flag)
 				ft_find_norm_index(arr[counter], sorted_arr, *array_len)));
 	}
 	ft_print_list(stack, array_len);
-	ft_printf("stack size: %d \n", stack->size);
 	ft_dlstclear(stack, array_len);
 	return (free(sorted_arr), ft_printf("end of arr_to_lst \n"));
 }

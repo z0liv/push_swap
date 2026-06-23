@@ -6,13 +6,13 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/18 10:40:28 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/19 13:33:54 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/23 10:56:30 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-char	*ft_swap_dlst(t_stack *stack, char stack_name)
+char	*ft_swap_dlst(t_stack *stack, char stack_name, t_bench *bench)
 {
 	int	tmp_content;
 	int	tmp_norm_index;
@@ -26,7 +26,11 @@ char	*ft_swap_dlst(t_stack *stack, char stack_name)
 	stack->head->next->content = tmp_content;
 	stack->head->next->norm_index = tmp_norm_index;
 	if (stack_name == 'a')
+	{
+		bench->sa ++;
 		return ("sa");
+	}
+	bench->sb ++;
 	return ("sb");
 }
 /* int	main(void)
