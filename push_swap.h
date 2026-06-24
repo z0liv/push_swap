@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 09:10:23 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/23 23:58:59 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/06/24 10:31:42 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ int			ft_find_norm_index(long num, long *sorted_arr, int array_len);
 //arguments manipulation
 char		*ft_concat_params(char **args);
 long int	ft_atol(const char *str);
+void 		ft_ftoa(float n, char *res, int after_point);
 long		*ft_sort_array(long *array, int array_len);
 float		ft_calculate_disorder(long *array, int *counter);
 
