@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_bench.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/23 12:05:30 by khurtado          #+#    #+#             */
-/*   Updated: 2026/06/23 23:58:47 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/06/24 10:42:39 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,17 +37,17 @@ void	ft_str_ops_helper(char *s1, size_t s1_n, char *s2, size_t s2_n)
 void	ft_print_bench(t_bench *bench)
 {
 	size_t	total_ops;
-	/* char	*disorder;
+	char	disorder[6];
 	
-	disorder = ft_ftoa(bench->disorder);
-	ft_strlcat(disorder, "%", ft_strlen(disorder) + 1); */
+	ft_ftoa(*bench->disorder, disorder, 2);
+	ft_strlcat(disorder, "%", ft_strlen(disorder) + 2);
 	total_ops = 0;
 	if (bench != NULL)
 	{
 		total_ops = *bench->sa + *bench->sb + *bench->ss + *bench->pa
 		+ *bench->pb + *bench->rr + *bench->ra + *bench->rb + *bench->rrr
 		+ *bench->rra + *bench->rrb;
-		ft_str_str_helper("[bench] disorder: ", "29.52%");
+		ft_str_str_helper("[bench] disorder: ", disorder);
 		ft_str_str_helper("[bench] strategy: ", bench->strategy);
 		ft_str_int_helper("[bench] total_ops: ", total_ops);
 		ft_putstr_fd("[bench] ", 2);
@@ -62,13 +62,14 @@ void	ft_print_bench(t_bench *bench)
 	}
 }
 
-int main(void)
+/* int main(void)
 {
 	t_bench *bench;
 
 	bench = malloc(sizeof(t_bench));
 	ft_init_bench(bench);
+	*bench->disorder = 24.93;
 	ft_print_bench(bench);
 	ft_clean_bench(&bench);
 	return (0);
-}
+} */

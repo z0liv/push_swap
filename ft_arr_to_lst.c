@@ -6,7 +6,7 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 10:28:09 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/23 12:29:40 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/24 12:13:00 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ static void	ft_free_helper(long *arr,
 {
 	free(arr);
 	free(stack);
-	free(bench);
 	free(sorted_arr);
+	ft_clean_bench(&bench);
 	exit(write(2, "Error\n", 7));
 }
 
