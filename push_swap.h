@@ -6,7 +6,7 @@
 /*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 09:10:23 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/24 10:50:13 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/06/24 12:47:00 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,8 @@ char		*ft_swap_dlst(t_stack *stack, char stack_name, t_bench *bench);
 char		*ft_swap_both(t_stack *stack_a, t_stack *stack_b, t_bench *bench);
 char		*ft_rotate_dlst(t_stack *stack, char stack_name, t_bench *bench);
 char		*ft_rotate_both(t_stack *stack_a, t_stack *stack_b, t_bench *bench);
+char		*ft_rrotate_dlst(t_stack *stack, char stack_name, t_bench *bench);
+char	*ft_rrotate_both(t_stack *stack_a, t_stack *stack_b, t_bench *bench);
 
 void		ft_init_bench(t_bench *bench);
 void		ft_print_bench(t_bench *bench);

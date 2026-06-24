@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap_both.c                                     :+:      :+:    :+:   */
+/*   ft_rrotate_both.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/23 10:52:11 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/24 12:18:49 by khurtado         ###   ########.fr       */
+/*   Created: 2026/06/24 12:45:01 by khurtado          #+#    #+#             */
+/*   Updated: 2026/06/24 12:46:28 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-char	*ft_swap_both(t_stack *stack_a, t_stack *stack_b, t_bench *bench)
+char	*ft_rrotate_both(t_stack *stack_a, t_stack *stack_b, t_bench *bench)
 {
-	ft_swap_dlst(stack_a, 'a', bench);
-	ft_swap_dlst(stack_b, 'b', bench);
-	*(bench->ss) += 1;
-	*(bench->sa) -= 1;
-	*(bench->sb) -= 1;
-	return ("ss");
+	ft_rrotate_dlst(stack_a, 'a', bench);
+	ft_rrotate_dlst(stack_b, 'b', bench);
+	*(bench->rrr) += 1;
+	*(bench->rra) -= 1;
+	*(bench->rrb) -= 1;
+	return ("rrr");
 }
