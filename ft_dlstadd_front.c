@@ -6,7 +6,7 @@
 /*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/24 13:26:47 by khurtado          #+#    #+#             */
-/*   Updated: 2026/06/24 15:16:30 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/06/24 15:30:54 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,13 @@ void	ft_dlstadd_front(t_stack *stack, t_d_list *new)
 	else
 	{
 		new->prev = stack->tail;
-		stack->tail->next = new;
+		new->next = stack->head;
 		stack->head = new;
 	}
-	stack->head->prev = stack->tail;
-	stack->tail->next = stack->head;
 	stack->size ++;
 }
 
-static void	ft_print_list(t_stack *stack, int *array_len)
+/* static void	ft_print_list(t_stack *stack, int *array_len)
 {
 	int			counter;
 	t_d_list	*lst_tmp;
@@ -52,11 +50,12 @@ int	main(void)
 	t_stack		*stack;
 	int			len;
 
-	len = 3;
+	len = 4;
 	stack = ft_newstack();
 	ft_dlstadd_front(stack, ft_dlstnew(42, 0));
 	ft_dlstadd_front(stack, ft_dlstnew(84, 1));
 	ft_dlstadd_front(stack, ft_dlstnew(126, 2));
+	ft_dlstadd_front(stack, ft_dlstnew(122, 3));
 
 	// Test content
 	ft_print_list(stack, &len);
@@ -65,4 +64,4 @@ int	main(void)
 
 	ft_dlstclear(stack, &len);
 	return (0);
-} 
+}  */
