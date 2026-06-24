@@ -6,7 +6,7 @@
 /*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 09:10:23 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/24 12:47:00 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/06/24 15:17:57 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ typedef struct s_bench
 
 void		ft_dlstadd_back(t_stack *stack, t_d_list *new);
 void		ft_dlstclear(t_stack *stack, int *array_len);
+void		ft_dlstadd_front(t_stack *stack, t_d_list *new);
 t_d_list	*ft_dlstnew(int content, int norm_index);
 t_stack		*ft_newstack(void);
 
@@ -61,7 +62,7 @@ char		*ft_swap_both(t_stack *stack_a, t_stack *stack_b, t_bench *bench);
 char		*ft_rotate_dlst(t_stack *stack, char stack_name, t_bench *bench);
 char		*ft_rotate_both(t_stack *stack_a, t_stack *stack_b, t_bench *bench);
 char		*ft_rrotate_dlst(t_stack *stack, char stack_name, t_bench *bench);
-char	*ft_rrotate_both(t_stack *stack_a, t_stack *stack_b, t_bench *bench);
+char		*ft_rrotate_both(t_stack *stack_a, t_stack *stack_b, t_bench *bench);
 
 void		ft_init_bench(t_bench *bench);
 void		ft_print_bench(t_bench *bench);
