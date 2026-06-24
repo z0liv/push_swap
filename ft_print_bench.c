@@ -6,7 +6,7 @@
 /*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/23 12:05:30 by khurtado          #+#    #+#             */
-/*   Updated: 2026/06/23 23:58:47 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/06/24 10:49:04 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void	ft_print_bench(t_bench *bench)
 	}
 }
 
-int main(void)
+/* int main(void)
 {
 	t_bench *bench;
 
@@ -71,4 +71,4 @@ int main(void)
 	ft_print_bench(bench);
 	ft_clean_bench(&bench);
 	return (0);
-}
+} */
