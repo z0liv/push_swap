@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 09:10:23 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/23 15:21:30 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/23 23:58:59 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ char		*ft_rotate_both(t_stack *stack_a, t_stack *stack_b, t_bench *bench);
 
 void		ft_init_bench(t_bench *bench);
 void		ft_print_bench(t_bench *bench);
-void		ft_clean_bench(t_bench *bench);
+void		ft_clean_bench(t_bench **bench);
 
 //validations
 int			ft_is_valid_input(char *input);
