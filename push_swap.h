@@ -6,7 +6,7 @@
 /*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 09:10:23 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/24 15:17:57 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/06/24 20:01:35 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,9 +60,13 @@ t_stack		*ft_newstack(void);
 char		*ft_swap_dlst(t_stack *stack, char stack_name, t_bench *bench);
 char		*ft_swap_both(t_stack *stack_a, t_stack *stack_b, t_bench *bench);
 char		*ft_rotate_dlst(t_stack *stack, char stack_name, t_bench *bench);
-char		*ft_rotate_both(t_stack *stack_a, t_stack *stack_b, t_bench *bench);
+char		*ft_rotate_both(t_stack *stack_a, t_stack *stack_b,
+				t_bench *bench);
 char		*ft_rrotate_dlst(t_stack *stack, char stack_name, t_bench *bench);
-char		*ft_rrotate_both(t_stack *stack_a, t_stack *stack_b, t_bench *bench);
+char		*ft_rrotate_both(t_stack *stack_a, t_stack *stack_b,
+				t_bench *bench);
+char		*ft_push_dlst(t_stack *stack_a, t_stack *stack_b, t_bench *bench,
+				char *stack_name);
 
 void		ft_init_bench(t_bench *bench);
 void		ft_print_bench(t_bench *bench);
@@ -89,7 +93,7 @@ char		*ft_flag_detector(char **str);
 char		*ft_bench_detector(char **str);
 
 void		ft_selector(char *concat, int *counter,
-				char **flags, t_bench *bench);
+char 		**flags, t_bench *bench);
 long		*ft_to_array(char *str, int *counter);
 
 #endif

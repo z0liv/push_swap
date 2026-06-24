@@ -6,7 +6,7 @@
 /*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 13:07:53 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/24 15:00:57 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/06/24 19:41:52 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,58 +31,52 @@ void	ft_dlstadd_back(t_stack *stack, t_d_list *new)
 	stack->tail->next = stack->head;
 	stack->size ++;
 }
-/*
+/*static void	ft_print_list(t_stack *stack, int *array_len)
+{
+	int			counter;
+	t_d_list	*lst_tmp;
+
+	counter = 0;
+	lst_tmp = stack->head;
+
+	while (counter < *array_len)
+	{
+		printf(
+			"Node %d\n"
+			"  addr       : %p\n"
+			"  content    : %d\n"
+			"  norm_index : %d\n"
+			"  prev       : %p\n"
+			"  next       : %p\n\n",
+			counter,
+			(void *)lst_tmp,
+			lst_tmp->content,
+			lst_tmp->norm_index,
+			(void *)lst_tmp->prev,
+			(void *)lst_tmp->next
+		);
+
+		lst_tmp = lst_tmp->next;
+		counter++;
+	}
+}
 int	main(void)
 {
-	t_d_list	*node1;
-	t_d_list	*node2;
-	t_d_list	*node3;
-	int		value1 = 42;
-	int		value2 = 84;
-	int		value3 = 126;
+	t_stack		*stack;
+	int			len;
 
-	// Create nodes
-	node1 = ft_dlstnew(value1, 0);
-	node2 = ft_dlstnew(value2, 1);
-	node3 = ft_dlstnew(value3, 2);
-	node1->next = node2;
-	node2->next = node1;
-	node1->prev = node2;
-	node2->prev = node1;
+	len = 4;
+	stack = ft_newstack();
+	ft_dlstadd_back(stack, ft_dlstnew(42, 0));
+	ft_dlstadd_back(stack, ft_dlstnew(84, 1));
+	ft_dlstadd_back(stack, ft_dlstnew(126, 2));
+	ft_dlstadd_back(stack, ft_dlstnew(122, 3));
 
 	// Test content
-	printf("node1 content = %d\n", node1->content);
-	printf("node2 content = %d\n", node2->content);
+	ft_print_list(stack, &len);
+	printf("new prev of head: %d", stack->head->prev->content);
+	printf("\n-----------------------------------------------\n");
 
-	// Test next pointer
-	printf("node1 next = %p\n", node1->next);
-	printf("node2 next = %p\n", node2->next);
-	
-	// Test prev pointer
-	printf("node1 prev content = %d\n", node1->prev->content);
-	printf("node2 prev content = %d\n", node2->prev->content);
-	
-	printf("--------------------adding int the back-------------------- \n");
-	ft_dlstadd_back(&node1, node3);
-	
-	printf("node1 content = %d\n", node1->content);
-	printf("node2 content = %d\n", node2->content);
-	printf("node3 content = %d\n", node3->content);
-
-	// Test next pointer
-	printf("node1 next = %p\n", node1->next);
-	printf("node2 next = %p\n", node2->next);
-	printf("node3 next = %p\n", node3->next);
-	
-	// Test prev pointer
-	printf("node1 prev content = %d\n", node1->prev->content);
-	printf("node2 prev content = %d\n", node2->prev->content);
-	printf("node3 prev content = %d\n", node3->prev->content);
-
-	free(node1);
-	free(node2);
-	free(node3);
-
+	ft_dlstclear(stack, &len);
 	return (0);
-}
-*/
+}*/

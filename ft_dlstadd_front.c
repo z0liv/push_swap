@@ -6,7 +6,7 @@
 /*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/24 13:26:47 by khurtado          #+#    #+#             */
-/*   Updated: 2026/06/24 15:30:54 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/06/24 19:38:15 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,31 +18,49 @@ void	ft_dlstadd_front(t_stack *stack, t_d_list *new)
 		return ;
 	if (!stack->head)
 	{
+		new->next = new;
+		new->prev = new;
 		stack->head = new;
 		stack->tail = new;
 	}
 	else
 	{
-		new->prev = stack->tail;
 		new->next = stack->head;
+		new->prev = stack->tail;
+		stack->head->prev = new;
+		stack->tail->next = new;
 		stack->head = new;
 	}
 	stack->size ++;
 }
 
-/* static void	ft_print_list(t_stack *stack, int *array_len)
+/*static void	ft_print_list(t_stack *stack, int *array_len)
 {
 	int			counter;
 	t_d_list	*lst_tmp;
-	
+
 	counter = 0;
 	lst_tmp = stack->head;
+
 	while (counter < *array_len)
 	{
-		printf("content: %d \n", (lst_tmp)->content);
-		//printf("norm_index: %d \n", (lst_tmp)->norm_index);
-		(lst_tmp) = (lst_tmp)->next;
-		counter ++;
+		printf(
+			"Node %d\n"
+			"  addr       : %p\n"
+			"  content    : %d\n"
+			"  norm_index : %d\n"
+			"  prev       : %p\n"
+			"  next       : %p\n\n",
+			counter,
+			(void *)lst_tmp,
+			lst_tmp->content,
+			lst_tmp->norm_index,
+			(void *)lst_tmp->prev,
+			(void *)lst_tmp->next
+		);
+
+		lst_tmp = lst_tmp->next;
+		counter++;
 	}
 }
 int	main(void)
@@ -50,12 +68,12 @@ int	main(void)
 	t_stack		*stack;
 	int			len;
 
-	len = 4;
+	len = 1;
 	stack = ft_newstack();
 	ft_dlstadd_front(stack, ft_dlstnew(42, 0));
-	ft_dlstadd_front(stack, ft_dlstnew(84, 1));
-	ft_dlstadd_front(stack, ft_dlstnew(126, 2));
-	ft_dlstadd_front(stack, ft_dlstnew(122, 3));
+	//ft_dlstadd_front(stack, ft_dlstnew(84, 1));
+	//ft_dlstadd_front(stack, ft_dlstnew(126, 2));
+	//ft_dlstadd_front(stack, ft_dlstnew(122, 3));
 
 	// Test content
 	ft_print_list(stack, &len);
@@ -64,4 +82,4 @@ int	main(void)
 
 	ft_dlstclear(stack, &len);
 	return (0);
-}  */
+}*/
