@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_swap_dlst.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/18 10:40:28 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/23 12:32:15 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/24 12:19:22 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ char	*ft_swap_dlst(t_stack *stack, char stack_name, t_bench *bench)
 	stack->head->next->norm_index = tmp_norm_index;
 	if (stack_name == 'a')
 	{
-		bench->sa ++;
+		*(bench->sa) += 1;
 		return ("sa");
 	}
-	bench->sb ++;
+	*(bench->sb) += 1;
 	return ("sb");
 }
 /* int	main(void)

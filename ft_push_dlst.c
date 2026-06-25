@@ -1,35 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dlstadd_back.c                                  :+:      :+:    :+:   */
+/*   ft_push_dlst.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/09 13:07:53 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/24 19:41:52 by khurtado         ###   ########.fr       */
+/*   Created: 2026/06/24 12:59:41 by khurtado          #+#    #+#             */
+/*   Updated: 2026/06/24 22:08:59 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_dlstadd_back(t_stack *stack, t_d_list *new)
+char	*ft_push_dlst(t_stack *stack_src, t_stack *stack_dst, t_bench *bench,
+			char *stack_name)
 {
-	if (!stack || !new)
-		return ;
-	if (!stack->head)
+	t_d_list	*node;
+	
+	if (stack_src->size == 0)
+		return (NULL);
+	node = stack_src->head;
+	node->prev->next = node->next;
+	node->next->prev = node->prev;
+	stack_src->head = node->next;
+	stack_src->tail = node->prev;
+	ft_dlstadd_front(stack_dst, node);
+	if (!ft_strncmp(stack_name, "a",1))
 	{
-		stack->head = new;
-		stack->tail = new;
+		*(bench)->pa += 1;
+		return ("pa");
 	}
-	else
-	{
-		new->prev = stack->tail;
-		stack->tail->next = new;
-		stack->tail = new;
-	}
-	stack->head->prev = stack->tail;
-	stack->tail->next = stack->head;
-	stack->size ++;
+	*(bench)->pb+= 1;
+	return ("pb");
 }
 /*static void	ft_print_list(t_stack *stack, int *array_len)
 {
@@ -64,9 +66,16 @@ int	main(void)
 {
 	t_stack		*stack;
 	int			len;
+	int			len2;
+	t_stack		*stackb;
+	t_bench		*bench;
 
 	len = 4;
+	len2 = 2;
+	bench = malloc(sizeof(t_bench));
+	ft_init_bench(bench);
 	stack = ft_newstack();
+	stackb = ft_newstack();
 	ft_dlstadd_back(stack, ft_dlstnew(42, 0));
 	ft_dlstadd_back(stack, ft_dlstnew(84, 1));
 	ft_dlstadd_back(stack, ft_dlstnew(126, 2));
@@ -74,9 +83,17 @@ int	main(void)
 
 	// Test content
 	ft_print_list(stack, &len);
-	printf("new prev of head: %d", stack->head->prev->content);
+	
 	printf("\n-----------------------------------------------\n");
-
+	ft_push_dlst(stack,stackb, bench, "a");
+	ft_push_dlst(stack,stackb, bench, "a");
+	ft_push_dlst(stack,stackb, bench, "a");
+	ft_push_dlst(stackb,stack, bench, "b");
+	ft_print_list(stackb, &len2);
+	len -= 2;
+	printf("\n-----------------------------------------------\n");
+	ft_print_list(stack, &len);
+	ft_print_bench(bench);
 	ft_dlstclear(stack, &len);
 	return (0);
 }*/

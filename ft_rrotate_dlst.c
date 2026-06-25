@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rotate_dlst.c                                   :+:      :+:    :+:   */
+/*   ft_rrotate_dlst.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/18 12:03:58 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/24 12:38:22 by khurtado         ###   ########.fr       */
+/*   Created: 2026/06/24 12:24:33 by khurtado          #+#    #+#             */
+/*   Updated: 2026/06/24 12:59:02 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-char	*ft_rotate_dlst(t_stack *stack, char stack_name, t_bench *bench)
+char	*ft_rrotate_dlst(t_stack *stack, char stack_name, t_bench *bench)
 {
-	t_d_list	*stack_first;
+	t_d_list	*stack_last;
 	t_d_list	*tmp_node;
 
-	stack_first = stack->head;
+	stack_last = stack->tail;
 	if (stack->size <= 1)
 		return (NULL);
-	tmp_node = stack_first->next;
-	stack->tail = stack_first;
-	stack->head = tmp_node;
+	tmp_node = stack_last->prev;
+	stack->head = stack_last;
+	stack->tail = tmp_node;
 	if (stack_name == 'a')
 	{
-		*(bench->ra) += 1;
-		return ("ra");
+		*(bench->rra) += 1;
+		return ("rra");
 	}
-	*(bench->rb) += 1;
-	return ("rb");
+	*(bench->rrb) += 1;
+	return ("rrb");
 }
 /* static void	ft_print_list(t_stack *stack, int *array_len)
 {
@@ -66,14 +66,14 @@ int	main(void)
 	// Test content
 	ft_print_list(stack, &len);
 	
-	printf("OPERATION: %s \n", ft_rotate_dlst(stack, 'a', bench));
+	printf("OPERATION: %s \n", ft_rrotate_dlst(stack, 'a', bench));
 	
 	printf("\n------------------------rotate-----------------------\n");
-	printf("new prev of head: %d", stack->head->prev->content);
+	//printf("new prev of head: %d", stack->head->prev->content);
 	printf("\n-----------------------------------------------\n");
 	ft_print_list(stack, &len);
 	printf("\n-----------------------------------------------\n");
-	printf("new next of tail: %d", stack->tail->next->content);
+	//printf("new next of tail: %d", stack->tail->next->content);
 	//ft_print_bench(bench);
 	ft_clean_bench(&bench);
 	
