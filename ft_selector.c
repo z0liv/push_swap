@@ -6,31 +6,11 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/19 11:41:28 by khurtado          #+#    #+#             */
-/*   Updated: 2026/06/25 08:53:58 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/25 10:34:43 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	ft_sorted(void)
-{
-	ft_printf(" el string esta ordenado\n");
-}
-
-void	ft_simple(void)
-{
-	ft_printf("estrategia simple\n");
-}
-
-void	ft_medium(void)
-{
-	ft_printf("estrategia intermedia\n");
-}
-
-void	ft_complex(void)
-{
-	ft_printf("estrategia compleja\n");
-}
 
 static void	ft_print_params(long *array, int *counter,
 		char *flag, float *disorder)
@@ -46,27 +26,56 @@ static void	ft_print_params(long *array, int *counter,
 		i++;
 	}
 	printf("\ndisorder:  [%f]\n", *disorder);
-	ft_printf("finalzacion de la ejecuion \n");
+}
+
+static void	ft_print_list(t_stack *stack, int *array_len)
+{
+	int			counter;
+	t_d_list	*lst_tmp;
+
+	counter = 0;
+	lst_tmp = stack->head;
+	while (counter < *array_len)
+	{
+		printf("content: %d \n", (lst_tmp)->content);
+		printf("norm_index: %d \n", (lst_tmp)->norm_index);
+		(lst_tmp) = (lst_tmp)->next;
+		counter ++;
+	}
+}
+
+void	ft_handle_disorder(long *array, int *counter, char **flags, t_bench *bench)
+{
+	t_stack	*stack_a;
+
+	stack_a = ft_arr_to_lst(array, counter, flags, bench);
+	if (!ft_find_str("", flags[1]) || ft_find_str("--adaptative", flags[1]))
+	{
+		bench->strategy = "Adaptative / O(n√n)";
+		if (*bench->disorder == 0.0)
+			ft_printf("SORTED");
+		else if (*bench->disorder < 0.2)
+		{
+			ft_simple_sort(stack_a, flags, bench);
+			ft_print_list(stack_a, counter);
+		}
+		else if (*bench->disorder >= 0.2 && *bench->disorder < 0.5)
+			ft_simple_sort(stack_a, flags, bench);
+		else if (*bench->disorder >= 0.5)
+			ft_simple_sort(stack_a, flags, bench);
+	}
+	ft_print_params(array, counter, flags[1], bench->disorder);
+	free(array);
+	ft_dlstclear(stack_a, &stack_a->size);
+	ft_print_bench(bench);
 }
 
 void	ft_selector(char *concat, int *counter,
 				char **flags, t_bench *bench)
 {
 	long		*array;
-	float		disorder;
 
 	array = ft_to_array(concat, counter);
-	disorder = ft_calculate_disorder(array, counter);
-	*bench->disorder = disorder;
-	if (disorder == 0.0)
-		ft_sorted();
-	else if (disorder < 0.2)
-		ft_simple();
-	else if (disorder >= 0.2 && disorder < 0.5)
-		ft_medium();
-	else if (disorder >= 0.5)
-		ft_complex();
-	ft_arr_to_lst(array, counter, flags, bench);
-	ft_print_params(array, counter, flags[1], &disorder);
-	free(array);
+	*bench->disorder = ft_calculate_disorder(array, counter);;
+	ft_handle_disorder(array, counter, flags, bench);
 }

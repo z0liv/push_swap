@@ -6,7 +6,7 @@
 #   By: omarquez <omarquez@student.42urduliz.com>    +#+  +:+       +#+        #
 #                                                  +#+#+#+#+#+   +#+           #
 #   Created: 2026/06/05 09:12:44 by omarquez            #+#    #+#             #
-#   Updated: 2026/06/25 08:45:13 by omarquez           ###   ########.fr       #
+#   Updated: 2026/06/25 09:24:53 by omarquez           ###   ########.fr       #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ SRCS = 	push_swap.c ft_dlstadd_back.c ft_dlstnew.c ft_atol.c\
 		ft_rotate_dlst.c ft_newstack.c ft_flag_detector.c ft_bench_detector.c\
 		ft_init_bench.c ft_rotate_both.c ft_swap_both.c ft_print_bench.c\
 		ft_clean_bench.c ft_ftoa.c ft_clean_bench.c ft_rrotate_dlst.c\
-		ft_push_dlst.c ft_rrotate_both.c ft_dlstadd_front.c\
+		ft_push_dlst.c ft_rrotate_both.c ft_dlstadd_front.c ft_simple_sort.c\
 		
 		
 OBJS = $(SRCS:%.c=$(OBJS_DIR)/%.o)

@@ -6,7 +6,7 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 09:10:23 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/25 08:45:45 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/25 09:22:19 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ typedef struct s_bench
 
 }	t_bench;
 
+void	ft_simple_sort(t_stack *stack_a, char **flags, t_bench *bench);
+
 void		ft_dlstadd_back(t_stack *stack, t_d_list *new);
 void		ft_dlstclear(t_stack *stack, int *array_len);
 void		ft_dlstadd_front(t_stack *stack, t_d_list *new);
@@ -77,7 +79,7 @@ int			ft_is_valid_input(char *input);
 int			ft_is_duplicate(long *array, int array_len);
 int			ft_is_overflow(long *array, int array_len);
 //list manipulation
-int			ft_arr_to_lst(long	*arr, int *counter,
+t_stack		*ft_arr_to_lst(long	*arr, int *counter,
 				char **flag, t_bench *bench);
 long		*ft_copy_long_arr(long *array, int array_len);
 int			ft_find_norm_index(long num, long *sorted_arr, int array_len);

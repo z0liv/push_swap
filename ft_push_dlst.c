@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_push_dlst.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/24 12:59:41 by khurtado          #+#    #+#             */
-/*   Updated: 2026/06/24 22:08:59 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/06/25 09:53:16 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ char	*ft_push_dlst(t_stack *stack_src, t_stack *stack_dst, t_bench *bench,
 	stack_src->head = node->next;
 	stack_src->tail = node->prev;
 	ft_dlstadd_front(stack_dst, node);
+	stack_src->size--;
 	if (!ft_strncmp(stack_name, "a",1))
 	{
 		*(bench)->pa += 1;

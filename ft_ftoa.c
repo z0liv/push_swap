@@ -6,7 +6,7 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/24 08:45:30 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/24 10:35:34 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/25 10:24:11 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ void ft_ftoa(float n, char *res, int after_point)
 
 	num_int = (int)n;
 	num_float = n - (float) num_int;
-	number = ft_int_to_str(num_int, res, 0);
+	number = ft_int_to_str(num_int, res, 1);
 	if (after_point != 0)
 	{
 		res[number] = '.';

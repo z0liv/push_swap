@@ -6,7 +6,7 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 10:28:09 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/24 12:13:00 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/25 09:35:45 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static void	ft_free_helper(long *arr,
 	exit(write(2, "Error\n", 7));
 }
 
-static void	ft_print_list(t_stack *stack, int *array_len)
+/* static void	ft_print_list(t_stack *stack, int *array_len)
 {
 	int			counter;
 	t_d_list	*lst_tmp;
@@ -38,9 +38,9 @@ static void	ft_print_list(t_stack *stack, int *array_len)
 		(lst_tmp) = (lst_tmp)->next;
 		counter ++;
 	}
-}
+} */
 
-int	ft_arr_to_lst(long	*arr, int *array_len,
+t_stack	*ft_arr_to_lst(long	*arr, int *array_len,
 				char **flags, t_bench *bench)
 {
 	t_stack		*stack;
@@ -61,7 +61,6 @@ int	ft_arr_to_lst(long	*arr, int *array_len,
 			ft_dlstnew(arr[counter],
 				ft_find_norm_index(arr[counter], sorted_arr, *array_len)));
 	}
-	ft_print_list(stack, array_len);
-	ft_dlstclear(stack, array_len);
-	return (free(sorted_arr), ft_printf("end of arr_to_lst \n"));
+	free(sorted_arr);
+	return (stack);
 }
