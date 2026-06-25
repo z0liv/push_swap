@@ -3,25 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   ft_simple_sort.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/24 12:44:43 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/25 10:00:43 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/25 12:23:49 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_simple_sort(t_stack *stack_a, char **flags, t_bench *bench)
+void	ft_simple_sort(t_stack *stack_a, t_bench *bench)
 {
 	t_stack *stack_b;
 	int	min;
 
 	min = 0;
 	stack_b = ft_newstack();
-	if (ft_find_str("--bench", flags[0]))
+	/* if (ft_find_str("--bench", flags[0]))
 		ft_printf("\n-----------BENCH---------\n");
-	ft_printf("\n-----------%d---------\n", stack_a->size);
+	ft_printf("\n-----------%d---------\n", stack_a->size); */
 	while (stack_a->size)
 	{
 		if (min == stack_a->head->norm_index)

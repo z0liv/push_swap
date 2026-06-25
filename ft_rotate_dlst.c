@@ -6,30 +6,30 @@
 /*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/18 12:03:58 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/24 12:38:22 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/06/25 12:16:47 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-char	*ft_rotate_dlst(t_stack *stack, char stack_name, t_bench *bench)
+int	ft_rotate_dlst(t_stack *stack, char stack_name, t_bench *bench)
 {
 	t_d_list	*stack_first;
 	t_d_list	*tmp_node;
 
 	stack_first = stack->head;
 	if (stack->size <= 1)
-		return (NULL);
+		return (0);
 	tmp_node = stack_first->next;
 	stack->tail = stack_first;
 	stack->head = tmp_node;
 	if (stack_name == 'a')
 	{
 		*(bench->ra) += 1;
-		return ("ra");
+		return (write(1, "ra\n", 3));
 	}
 	*(bench->rb) += 1;
-	return ("rb");
+	return (write(1, "rb\n", 3));
 }
 /* static void	ft_print_list(t_stack *stack, int *array_len)
 {

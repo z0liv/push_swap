@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_selector.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/19 11:41:28 by khurtado          #+#    #+#             */
-/*   Updated: 2026/06/25 10:34:43 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/25 12:25:24 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	ft_print_params(long *array, int *counter,
+/* static void	ft_print_params(long *array, int *counter,
 		char *flag, float *disorder)
 {
 	int	i;
@@ -26,9 +26,9 @@ static void	ft_print_params(long *array, int *counter,
 		i++;
 	}
 	printf("\ndisorder:  [%f]\n", *disorder);
-}
+} */
 
-static void	ft_print_list(t_stack *stack, int *array_len)
+/* static void	ft_print_list(t_stack *stack, int *array_len)
 {
 	int			counter;
 	t_d_list	*lst_tmp;
@@ -42,7 +42,7 @@ static void	ft_print_list(t_stack *stack, int *array_len)
 		(lst_tmp) = (lst_tmp)->next;
 		counter ++;
 	}
-}
+} */
 
 void	ft_handle_disorder(long *array, int *counter, char **flags, t_bench *bench)
 {
@@ -56,18 +56,19 @@ void	ft_handle_disorder(long *array, int *counter, char **flags, t_bench *bench)
 			ft_printf("SORTED");
 		else if (*bench->disorder < 0.2)
 		{
-			ft_simple_sort(stack_a, flags, bench);
-			ft_print_list(stack_a, counter);
+			ft_simple_sort(stack_a, bench);
+			//ft_print_list(stack_a, counter);
 		}
 		else if (*bench->disorder >= 0.2 && *bench->disorder < 0.5)
-			ft_simple_sort(stack_a, flags, bench);
+			ft_simple_sort(stack_a, bench);
 		else if (*bench->disorder >= 0.5)
-			ft_simple_sort(stack_a, flags, bench);
+			ft_simple_sort(stack_a, bench);
 	}
-	ft_print_params(array, counter, flags[1], bench->disorder);
+	//ft_print_params(array, counter, flags[1], bench->disorder);
 	free(array);
 	ft_dlstclear(stack_a, &stack_a->size);
-	ft_print_bench(bench);
+	if (ft_find_str(flags[0],"--bench"))
+		ft_print_bench(bench);
 }
 
 void	ft_selector(char *concat, int *counter,

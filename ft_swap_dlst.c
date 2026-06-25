@@ -6,19 +6,19 @@
 /*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/18 10:40:28 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/24 12:19:22 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/06/25 12:16:03 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-char	*ft_swap_dlst(t_stack *stack, char stack_name, t_bench *bench)
+int	ft_swap_dlst(t_stack *stack, char stack_name, t_bench *bench)
 {
 	int	tmp_content;
 	int	tmp_norm_index;
 
 	if (stack->size <= 1)
-		return (NULL);
+		return (0);
 	tmp_content = stack->head->content;
 	tmp_norm_index = stack->head->norm_index;
 	stack->head->content = stack->head->next->content;
@@ -28,10 +28,10 @@ char	*ft_swap_dlst(t_stack *stack, char stack_name, t_bench *bench)
 	if (stack_name == 'a')
 	{
 		*(bench->sa) += 1;
-		return ("sa");
+		return (write(1, "sa\n", 3));
 	}
 	*(bench->sb) += 1;
-	return ("sb");
+	return (write(1, "sb\n", 3));
 }
 /* int	main(void)
 {

@@ -3,22 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_push_dlst.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/24 12:59:41 by khurtado          #+#    #+#             */
-/*   Updated: 2026/06/25 09:53:16 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/25 12:50:02 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-char	*ft_push_dlst(t_stack *stack_src, t_stack *stack_dst, t_bench *bench,
+int	ft_push_dlst(t_stack *stack_src, t_stack *stack_dst, t_bench *bench,
 			char *stack_name)
 {
 	t_d_list	*node;
 	
 	if (stack_src->size == 0)
-		return (NULL);
+		return (0);
 	node = stack_src->head;
 	node->prev->next = node->next;
 	node->next->prev = node->prev;
@@ -29,10 +29,10 @@ char	*ft_push_dlst(t_stack *stack_src, t_stack *stack_dst, t_bench *bench,
 	if (!ft_strncmp(stack_name, "a",1))
 	{
 		*(bench)->pa += 1;
-		return ("pa");
+		return (write(1, "pb\n", 3));
 	}
 	*(bench)->pb+= 1;
-	return ("pb");
+	return (write(1, "pa\n", 3));
 }
 /*static void	ft_print_list(t_stack *stack, int *array_len)
 {
