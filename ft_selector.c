@@ -6,7 +6,7 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/19 11:41:28 by khurtado          #+#    #+#             */
-/*   Updated: 2026/06/25 08:45:26 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/25 08:53:58 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	ft_selector(char *concat, int *counter,
 
 	array = ft_to_array(concat, counter);
 	disorder = ft_calculate_disorder(array, counter);
-	/* bench->disorder = disorder; */
+	*bench->disorder = disorder;
 	if (disorder == 0.0)
 		ft_sorted();
 	else if (disorder < 0.2)
