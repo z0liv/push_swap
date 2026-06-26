@@ -6,7 +6,7 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/24 08:45:30 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/25 10:24:11 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/26 12:30:00 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 static int	ft_power(int base, int exponent)
 {
-	int sum;
-	int tmp;
-	int counter1;
-	int counter2;
+	int	sum;
+	int	tmp;
+	int	counter1;
+	int	counter2;
 
 	if (exponent == 0)
 		return (1);
@@ -31,7 +31,7 @@ static int	ft_power(int base, int exponent)
 		{
 			sum += tmp;
 			counter2 ++;
-		}	
+		}
 		tmp = sum;
 		counter1 ++;
 	}
@@ -73,20 +73,20 @@ static int	ft_int_to_str(int num, char *str, int digits)
 	return (counter);
 }
 
-void ft_ftoa(float n, char *res, int after_point)
+void	ft_ftoa(float n, char *res, int after_point)
 {
 	int		number;
 	int		num_int;
-	float 	num_float;
+	float	num_float;
 
-	num_int = (int)n;
+	num_int = (int) n;
 	num_float = n - (float) num_int;
 	number = ft_int_to_str(num_int, res, 1);
 	if (after_point != 0)
 	{
 		res[number] = '.';
 		num_float = num_float * ft_power(10, after_point);
-		ft_int_to_str((int)num_float, res + number + 1, after_point);
+		ft_int_to_str((int) num_float, res + number + 1, after_point);
 	}
 }
 /* 

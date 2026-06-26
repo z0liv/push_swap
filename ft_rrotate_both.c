@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_rrotate_both.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/24 12:45:01 by khurtado          #+#    #+#             */
-/*   Updated: 2026/06/25 12:15:40 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/06/26 12:23:49 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,5 @@ int	ft_rrotate_both(t_stack *stack_a, t_stack *stack_b, t_bench *bench)
 	*(bench->rrr) += 1;
 	*(bench->rra) -= 1;
 	*(bench->rrb) -= 1;
-	return(write(1, "rrr\n", 4));
+	return (write(1, "rrr\n", 4));
 }
