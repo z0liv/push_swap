@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 09:07:59 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/25 09:01:23 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/26 13:43:59 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	ft_establish_flags(char **flags, char **concat)
+/*static void	ft_establish_flags(char **flags, char **concat)
 {
 	free(flags[0]);
 	free(flags[1]);
 	flags[0] = ft_bench_detector(concat);
 	flags[1] = ft_flag_detector(concat);
 }
-
+ 
 int	main(int argc, char **argv)
 {
 	int		counter;
@@ -41,5 +41,5 @@ int	main(int argc, char **argv)
 			free(concat), ft_clean_bench(&bench), write(2, "Error\n", 7));
 	ft_selector(concat, &counter, flags, bench);
 	return (ft_clean_bench(&bench), ft_free_split(flags, 2), 0);
-}
+} */
 
