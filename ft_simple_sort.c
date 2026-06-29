@@ -6,7 +6,7 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/24 12:44:43 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/26 12:36:21 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/29 12:48:06 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_find_node(t_stack *stack, int n_index, int len)
 {
-	t_d_list *tmp_node;
-	int counter;
-	
+	t_d_list	*tmp_node;
+	int			counter;
+
 	tmp_node = stack->head;
 	counter = 0;
 	while (counter < len)
@@ -26,7 +26,6 @@ int	ft_find_node(t_stack *stack, int n_index, int len)
 		tmp_node = tmp_node->next;
 		counter++;
 	}
-	
 	return (0);
 }
 
