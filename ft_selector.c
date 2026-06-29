@@ -6,7 +6,7 @@
 /*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/19 11:41:28 by khurtado          #+#    #+#             */
-/*   Updated: 2026/06/29 23:15:27 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/06/29 23:19:46 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,12 +84,9 @@ void	ft_handle_disorder(long *array, int *counter,
 		if (*bench->disorder == 0.0)
 			ft_printf("SORTED\n");
 		else if (*bench->disorder < 0.2)
-		{
 			ft_simple_sort(stack_a, bench);
-			//ft_print_list(stack_a, counter);
-		}
 		else if (*bench->disorder >= 0.2 && *bench->disorder < 0.5)
-			ft_simple_sort(stack_a, bench);
+			ft_medium_sort(stack_a, bench);
 		else if (*bench->disorder >= 0.5)
 			ft_simple_sort(stack_a, bench);
 	}
