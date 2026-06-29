@@ -6,7 +6,7 @@
 /*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 09:10:23 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/26 13:46:23 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/06/29 20:06:54 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ int			ft_find_norm_index(long num, long *sorted_arr, int array_len);
 //arguments manipulation
 char		*ft_concat_params(char **args);
 long int	ft_atol(const char *str);
-void 		ft_ftoa(float n, char *res, int after_point);
+void		ft_ftoa(float n, char *res, int after_point);
 long		*ft_sort_array(long *array, int array_len);
 float		ft_calculate_disorder(long *array, int *counter);
 
@@ -98,7 +98,7 @@ char		*ft_flag_detector(char **str);
 char		*ft_bench_detector(char **str);
 
 void		ft_selector(char *concat, int *counter,
-char 		**flags, t_bench *bench);
+				char **flags, t_bench *bench);
 long		*ft_to_array(char *str, int *counter);
 
 #endif

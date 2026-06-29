@@ -6,7 +6,7 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/23 12:05:30 by khurtado          #+#    #+#             */
-/*   Updated: 2026/06/25 10:32:30 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/26 12:31:59 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,15 +38,15 @@ void	ft_print_bench(t_bench *bench)
 {
 	size_t	total_ops;
 	char	disorder[6];
-	
+
 	ft_ftoa(*bench->disorder, disorder, 2);
 	ft_strlcat(disorder, "%", ft_strlen(disorder) + 2);
 	total_ops = 0;
 	if (bench != NULL)
 	{
 		total_ops = *bench->sa + *bench->sb + *bench->ss + *bench->pa
-		+ *bench->pb + *bench->rr + *bench->ra + *bench->rb + *bench->rrr
-		+ *bench->rra + *bench->rrb;
+			+ *bench->pb + *bench->rr + *bench->ra + *bench->rb + *bench->rrr
+			+ *bench->rra + *bench->rrb;
 		ft_str_str_helper("[bench] disorder: ", disorder);
 		ft_str_str_helper("[bench] strategy: ", bench->strategy);
 		ft_str_int_helper("[bench] total_ops: ", total_ops);

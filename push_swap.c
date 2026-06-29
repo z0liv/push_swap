@@ -6,7 +6,7 @@
 /*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 09:07:59 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/26 13:43:59 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/06/29 20:06:43 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,9 @@ int	main(int argc, char **argv)
 			free(concat), ft_clean_bench(&bench), write(2, "Error\n", 7));
 	ft_selector(concat, &counter, flags, bench);
 	return (ft_clean_bench(&bench), ft_free_split(flags, 2), 0);
+<<<<<<< HEAD
 } */
 
+=======
+}
+>>>>>>> master

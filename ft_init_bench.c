@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_init_bench.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/23 10:57:16 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/23 23:58:10 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/06/26 12:23:16 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void	ft_malloc_bench(t_bench *bench)
 	bench->rrb = malloc(sizeof(size_t));
 	bench->rrr = malloc(sizeof(size_t));
 }
+
 void	ft_init_bench(t_bench *bench)
 {
 	ft_malloc_bench(bench);

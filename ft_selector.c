@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_selector.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/19 11:41:28 by khurtado          #+#    #+#             */
-/*   Updated: 2026/06/25 12:25:24 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/06/26 12:25:33 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,8 @@
 	}
 } */
 
-void	ft_handle_disorder(long *array, int *counter, char **flags, t_bench *bench)
+void	ft_handle_disorder(long *array, int *counter,
+	char **flags, t_bench *bench)
 {
 	t_stack	*stack_a;
 
@@ -67,7 +68,7 @@ void	ft_handle_disorder(long *array, int *counter, char **flags, t_bench *bench)
 	//ft_print_params(array, counter, flags[1], bench->disorder);
 	free(array);
 	ft_dlstclear(stack_a, &stack_a->size);
-	if (ft_find_str(flags[0],"--bench"))
+	if (ft_find_str(flags[0], "--bench"))
 		ft_print_bench(bench);
 }
 
@@ -77,6 +78,6 @@ void	ft_selector(char *concat, int *counter,
 	long		*array;
 
 	array = ft_to_array(concat, counter);
-	*bench->disorder = ft_calculate_disorder(array, counter);;
+	*bench->disorder = ft_calculate_disorder(array, counter);
 	ft_handle_disorder(array, counter, flags, bench);
 }
