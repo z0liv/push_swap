@@ -6,7 +6,7 @@
 /*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/26 12:37:54 by khurtado          #+#    #+#             */
-/*   Updated: 2026/06/26 13:49:30 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/06/29 20:13:18 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ double	ft_sqrt(t_stack *stack)
 	chunks = ft_sqrt(stack_a);
 	stack_b = ft_newstack();
 } */
-int main(void)
+/*int main(void)
 {
 	t_stack *stack;
 
@@ -56,4 +56,4 @@ int main(void)
 	
 	ft_sqrt(stack);
 	return (0);
-}
+}*/

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_selector.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/19 11:41:28 by khurtado          #+#    #+#             */
-/*   Updated: 2026/06/26 12:25:33 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/29 20:43:03 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,31 @@
 	}
 } */
 
+static char	*ft_algorythm(t_bench *bench, char *str)
+{
+	if ((*(bench)->disorder < 0.2 && !str)//condicional mal
+		|| !ft_strncmp(str, "--simple", 9))
+		return (" 0 (n^2)");
+	if ((*(bench)->disorder >= 0.2 && *(bench)->disorder < 0.5) 
+		|| !ft_strncmp(str, "--medium", 9))
+		return (" 0 (sqrtn)");
+	return (" a ver");
+}
+
+static char	*ft_strategy_setter(char *str, t_bench *bench)
+{
+	char	*str2;
+
+	str2 = ft_algorythm(bench, str);
+	if (ft_strlen(str) != 0)
+	{
+		str[2] -= 32;
+		return (ft_strjoin(str + 2, str2));
+	}
+	else
+		return (ft_strjoin("Adaptative", str2));
+}
+
 void	ft_handle_disorder(long *array, int *counter,
 	char **flags, t_bench *bench)
 {
@@ -52,9 +77,9 @@ void	ft_handle_disorder(long *array, int *counter,
 	stack_a = ft_arr_to_lst(array, counter, flags, bench);
 	if (!ft_find_str("", flags[1]) || ft_find_str("--adaptative", flags[1]))
 	{
-		bench->strategy = "Adaptative / O(n√n)";
+		bench->strategy = ft_strategy_setter(flags[1], bench);
 		if (*bench->disorder == 0.0)
-			ft_printf("SORTED");
+			ft_printf("SORTED\n");
 		else if (*bench->disorder < 0.2)
 		{
 			ft_simple_sort(stack_a, bench);
