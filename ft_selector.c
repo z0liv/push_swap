@@ -6,7 +6,7 @@
 /*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/19 11:41:28 by khurtado          #+#    #+#             */
-/*   Updated: 2026/06/29 20:43:03 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/06/29 23:15:27 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,22 +44,25 @@
 	}
 } */
 
-static char	*ft_algorythm(t_bench *bench, char *str)
+static char	*ft_algorithm(t_bench *bench, char *str)
 {
-	if ((*(bench)->disorder < 0.2 && !str)//condicional mal
-		|| !ft_strncmp(str, "--simple", 9))
+	if ((*(bench)->disorder < 0.2 && (!str || *str == '\0'))
+			|| !ft_strncmp(str, "--simple", 8))
 		return (" 0 (n^2)");
-	if ((*(bench)->disorder >= 0.2 && *(bench)->disorder < 0.5) 
-		|| !ft_strncmp(str, "--medium", 9))
+	else if ((((!str || *str == '\0') && *(bench)->disorder >= 0.2)
+				&& *(bench)->disorder < 0.5) || !ft_strncmp(str, "--medium", 8))
 		return (" 0 (sqrtn)");
-	return (" a ver");
+	else if ((*(bench)->disorder >= 0.5 && (!str || *str == '\0'))
+			|| !ft_strncmp(str, "--complex", 9))
+		return (" 0 (n log n)");
+	return (NULL);
 }
 
 static char	*ft_strategy_setter(char *str, t_bench *bench)
 {
 	char	*str2;
 
-	str2 = ft_algorythm(bench, str);
+	str2 = ft_algorithm(bench, str);
 	if (ft_strlen(str) != 0)
 	{
 		str[2] -= 32;
