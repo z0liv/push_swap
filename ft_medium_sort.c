@@ -6,7 +6,7 @@
 /*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/26 12:37:54 by khurtado          #+#    #+#             */
-/*   Updated: 2026/06/30 00:05:18 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/06/30 09:11:40 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ double	ft_sqrt(t_stack *stack)
 	return (root);
 }
 
- void	ft_medium_sort(t_stack *stack_a, t_bench *bench)
+void	ft_medium_sort(t_stack *stack_a, t_bench *bench)
 {
 	t_stack *stack_b;
 	int		chunks;
