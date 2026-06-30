@@ -6,7 +6,7 @@
 /*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 09:07:59 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/29 23:54:48 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/06/30 09:09:28 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	ft_establish_flags(char **flags, char **concat)
 	flags[0] = ft_bench_detector(concat);
 	flags[1] = ft_flag_detector(concat);
 }
- 
+
 int	main(int argc, char **argv)
 {
 	int		counter;

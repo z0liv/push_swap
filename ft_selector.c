@@ -6,7 +6,7 @@
 /*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/19 11:41:28 by khurtado          #+#    #+#             */
-/*   Updated: 2026/06/29 23:19:46 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/06/30 09:09:53 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,13 +47,13 @@
 static char	*ft_algorithm(t_bench *bench, char *str)
 {
 	if ((*(bench)->disorder < 0.2 && (!str || *str == '\0'))
-			|| !ft_strncmp(str, "--simple", 8))
+		|| !ft_strncmp(str, "--simple", 8))
 		return (" 0 (n^2)");
 	else if ((((!str || *str == '\0') && *(bench)->disorder >= 0.2)
-				&& *(bench)->disorder < 0.5) || !ft_strncmp(str, "--medium", 8))
+			&& *(bench)->disorder < 0.5) || !ft_strncmp(str, "--medium", 8))
 		return (" 0 (sqrtn)");
 	else if ((*(bench)->disorder >= 0.5 && (!str || *str == '\0'))
-			|| !ft_strncmp(str, "--complex", 9))
+		|| !ft_strncmp(str, "--complex", 9))
 		return (" 0 (n log n)");
 	return (NULL);
 }
@@ -90,7 +90,6 @@ void	ft_handle_disorder(long *array, int *counter,
 		else if (*bench->disorder >= 0.5)
 			ft_simple_sort(stack_a, bench);
 	}
-	//ft_print_params(array, counter, flags[1], bench->disorder);
 	free(array);
 	ft_dlstclear(stack_a, &stack_a->size);
 	if (ft_find_str(flags[0], "--bench"))
