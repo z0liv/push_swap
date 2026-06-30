@@ -1,0 +1,31 @@
+valgrind ./push_swap 
+valgrind ./push_swap 1
+valgrind ./push_swap 0
+valgrind ./push_swap 1 2 3 4 4
+valgrind ./push_swap 1 1
+valgrind ./push_swap 1 3 4 2 afsd
+valgrind ./push_swap 1 3 4 2
+
+valgrind ./push_swap --bench 
+valgrind ./push_swap --bench 1
+valgrind ./push_swap --bench 0
+valgrind ./push_swap --bench 1 2 3 4 4
+valgrind ./push_swap --bench 1 1
+valgrind ./push_swap --bench 1 3 4 2 afsd
+valgrind ./push_swap --bench 1 3 4 2
+
+valgrind ./push_swap --bench --simple 
+valgrind ./push_swap --bench --simple 1
+valgrind ./push_swap --bench --simple 0
+valgrind ./push_swap --bench --simple 1 2 3 4 4
+valgrind ./push_swap --bench --simple 1 1
+valgrind ./push_swap --bench --simple 1 3 4 2 afsd
+valgrind ./push_swap --bench --simple 1 3 4 2
+
+valgrind ./push_swap --simple --bench 
+valgrind ./push_swap --simple --bench 1
+valgrind ./push_swap --simple --bench 0
+valgrind ./push_swap --simple --bench 1 2 3 4 4
+valgrind ./push_swap --simple --bench 1 1
+valgrind ./push_swap --simple --bench 1 3 4 2 afsd
+valgrind ./push_swap --simple --bench 1 3 4 2

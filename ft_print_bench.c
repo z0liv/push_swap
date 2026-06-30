@@ -6,7 +6,7 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/23 12:05:30 by khurtado          #+#    #+#             */
-/*   Updated: 2026/06/26 12:31:59 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/30 12:39:42 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,10 @@ void	ft_str_ops_helper(char *s1, size_t s1_n, char *s2, size_t s2_n)
 void	ft_print_bench(t_bench *bench)
 {
 	size_t	total_ops;
-	char	disorder[6];
+	char	disorder[10];
 
-	ft_ftoa(*bench->disorder, disorder, 2);
-	ft_strlcat(disorder, "%", ft_strlen(disorder) + 2);
+	ft_ftoa(*bench->disorder * 100.0f, disorder, 2);
+	ft_strlcat(disorder, "%", sizeof(disorder));
 	total_ops = 0;
 	if (bench != NULL)
 	{
