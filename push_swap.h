@@ -6,7 +6,7 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 09:10:23 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/30 10:35:39 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/30 10:38:58 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ typedef struct s_bench
 
 void 		ft_complex_sort(t_stack *stack_a, t_bench *bench);
 void		ft_medium_sort(t_stack *stack_a, t_bench *bench);
-
+void		ft_complex_sort(t_stack *stack_a, t_bench *bench);
 void		ft_simple_sort(t_stack *stack_a, t_bench *bench);
 
 void		ft_dlstadd_back(t_stack *stack, t_d_list *new);
