@@ -6,11 +6,23 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/19 11:41:28 by khurtado          #+#    #+#             */
-/*   Updated: 2026/06/30 12:36:33 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/30 14:34:18 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static void	ft_free_helper(long *arr,
+		t_stack *stack,
+		char **flags,
+		t_bench *bench)
+{
+	free(arr);
+	ft_dlstclear(stack, &stack->size);
+	ft_free_split(flags, 2);
+	ft_clean_bench(&bench);
+	exit(0);
+}
 
 static char	*ft_algorithm(t_bench *bench, char *str)
 {
@@ -46,7 +58,9 @@ void	ft_handle_disorder(long *array, int *counter,
 	t_stack	*stack_a;
 
 	stack_a = ft_arr_to_lst(array, counter, flags, bench);
-	if (ft_find_str("--simple", flags[1]))
+	if (*bench->disorder == 0.0)
+		ft_free_helper(array, stack_a, flags, bench);
+	else if (ft_find_str("--simple", flags[1]))
 		ft_simple_sort(stack_a, bench);
 	else if (ft_find_str("--medium", flags[1]))
 		ft_medium_sort(stack_a, bench);
@@ -55,9 +69,7 @@ void	ft_handle_disorder(long *array, int *counter,
 	else
 	{
 		bench->strategy = ft_strategy_setter(flags[1], bench);
-		if (*bench->disorder == 0.0)
-			ft_printf("\n");
-		else if (*bench->disorder < 0.2)
+		if (*bench->disorder < 0.2)
 			ft_simple_sort(stack_a, bench);
 		else if (*bench->disorder >= 0.2 && *bench->disorder < 0.5)
 			ft_medium_sort(stack_a, bench);
