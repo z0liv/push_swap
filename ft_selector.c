@@ -6,7 +6,7 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/19 11:41:28 by khurtado          #+#    #+#             */
-/*   Updated: 2026/06/30 10:27:10 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/30 10:32:33 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,13 @@ void	ft_handle_disorder(long *array, int *counter,
 	t_stack	*stack_a;
 
 	stack_a = ft_arr_to_lst(array, counter, flags, bench);
-	if (ft_find_str("", flags[1]) || ft_find_str("--adaptative", flags[1]))
+	if (ft_find_str("--simple", flags[1]))
+		ft_simple_sort(stack_a, bench);
+	else if (ft_find_str("--medium", flags[1]))
+		ft_medium_sort(stack_a, bench);
+	else if (ft_find_str("--complex", flags[1]))
+		ft_complex_sort(stack_a, bench);
+	else
 	{
 		bench->strategy = ft_strategy_setter(flags[1], bench);
 		if (*bench->disorder == 0.0)
@@ -54,9 +60,9 @@ void	ft_handle_disorder(long *array, int *counter,
 		else if (*bench->disorder < 0.2)
 			ft_simple_sort(stack_a, bench);
 		else if (*bench->disorder >= 0.2 && *bench->disorder < 0.5)
-		ft_medium_sort(stack_a, bench);
+			ft_medium_sort(stack_a, bench);
 		else if (*bench->disorder >= 0.5)
-			ft_simple_sort(stack_a, bench);
+			ft_complex_sort(stack_a, bench);
 	}
 	free(array);
 	ft_dlstclear(stack_a, &stack_a->size);
