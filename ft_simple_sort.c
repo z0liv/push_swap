@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_simple_sort.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/24 12:44:43 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/29 12:48:06 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/29 23:59:02 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	ft_simple_sort(t_stack *stack_a, t_bench *bench)
 	{
 		if (min == stack_a->head->norm_index)
 		{
-			ft_push_dlst(stack_a, stack_b, bench, "a");
+			ft_push_dlst(stack_a, stack_b, bench, "b");
 			min ++;
 		}
 		else if (ft_find_node(stack_a, min, (int)(stack_a->size / 2)))
@@ -49,6 +49,6 @@ void	ft_simple_sort(t_stack *stack_a, t_bench *bench)
 			ft_rrotate_dlst(stack_a, 'a', bench);
 	}
 	while (stack_b->size)
-		ft_push_dlst(stack_b, stack_a, bench, "b");
+		ft_push_dlst(stack_b, stack_a, bench, "a");
 	ft_dlstclear(stack_b, &stack_b->size);
 }

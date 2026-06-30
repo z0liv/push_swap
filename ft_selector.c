@@ -6,43 +6,39 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/19 11:41:28 by khurtado          #+#    #+#             */
-/*   Updated: 2026/06/26 12:25:33 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/30 10:27:10 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* static void	ft_print_params(long *array, int *counter,
-		char *flag, float *disorder)
+static char	*ft_algorithm(t_bench *bench, char *str)
 {
-	int	i;
+	if ((*(bench)->disorder < 0.2 && (!str || *str == '\0'))
+		|| !ft_strncmp(str, "--simple", 8))
+		return ("/ O(n²)");
+	else if ((((!str || *str == '\0') && *(bench)->disorder >= 0.2)
+			&& *(bench)->disorder < 0.5) || !ft_strncmp(str, "--medium", 8))
+		return ("/ O(n√n)");
+	else if ((*(bench)->disorder >= 0.5 && (!str || *str == '\0'))
+		|| !ft_strncmp(str, "--complex", 9))
+		return ("/ O(n log n)");
+	return (NULL);
+}
 
-	i = 0;
-	if (ft_strlen(flag))
-		ft_printf("estrategia seleccionada = %s\n", flag + 2);
-	while (i < *counter)
-	{
-		ft_printf("numeros = [%d] ", array[i]);
-		i++;
-	}
-	printf("\ndisorder:  [%f]\n", *disorder);
-} */
-
-/* static void	ft_print_list(t_stack *stack, int *array_len)
+static char	*ft_strategy_setter(char *str, t_bench *bench)
 {
-	int			counter;
-	t_d_list	*lst_tmp;
+	char	*str2;
 
-	counter = 0;
-	lst_tmp = stack->head;
-	while (counter < *array_len)
+	str2 = ft_algorithm(bench, str);
+	if (ft_strlen(str) != 0)
 	{
-		printf("content: %d \n", (lst_tmp)->content);
-		printf("norm_index: %d \n", (lst_tmp)->norm_index);
-		(lst_tmp) = (lst_tmp)->next;
-		counter ++;
+		str[2] -= 32;
+		return (ft_strjoin(str + 2, str2));
 	}
-} */
+	else
+		return (ft_strjoin("Adaptative", str2));
+}
 
 void	ft_handle_disorder(long *array, int *counter,
 	char **flags, t_bench *bench)
@@ -50,22 +46,18 @@ void	ft_handle_disorder(long *array, int *counter,
 	t_stack	*stack_a;
 
 	stack_a = ft_arr_to_lst(array, counter, flags, bench);
-	if (!ft_find_str("", flags[1]) || ft_find_str("--adaptative", flags[1]))
+	if (ft_find_str("", flags[1]) || ft_find_str("--adaptative", flags[1]))
 	{
-		bench->strategy = "Adaptative / O(n√n)";
+		bench->strategy = ft_strategy_setter(flags[1], bench);
 		if (*bench->disorder == 0.0)
-			ft_printf("SORTED");
+			ft_printf("SORTED\n");
 		else if (*bench->disorder < 0.2)
-		{
 			ft_simple_sort(stack_a, bench);
-			//ft_print_list(stack_a, counter);
-		}
 		else if (*bench->disorder >= 0.2 && *bench->disorder < 0.5)
-			ft_simple_sort(stack_a, bench);
+		ft_medium_sort(stack_a, bench);
 		else if (*bench->disorder >= 0.5)
 			ft_simple_sort(stack_a, bench);
 	}
-	//ft_print_params(array, counter, flags[1], bench->disorder);
 	free(array);
 	ft_dlstclear(stack_a, &stack_a->size);
 	if (ft_find_str(flags[0], "--bench"))

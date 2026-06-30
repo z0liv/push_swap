@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_push_dlst.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/24 12:59:41 by khurtado          #+#    #+#             */
-/*   Updated: 2026/06/26 12:31:13 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/06/29 23:58:47 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,10 @@ int	ft_push_dlst(t_stack *stack_src, t_stack *stack_dst, t_bench *bench,
 	if (!ft_strncmp(stack_name, "a", 1))
 	{
 		*(bench)->pa += 1;
-		return (write(1, "pb\n", 3));
+		return (write(1, "pa\n", 3));
 	}
 	*(bench)->pb += 1;
-	return (write(1, "pa\n", 3));
+	return (write(1, "pb\n", 3));
 }
 /*static void	ft_print_list(t_stack *stack, int *array_len)
 {

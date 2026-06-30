@@ -6,7 +6,7 @@
 /*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/23 13:41:01 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/23 23:59:13 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/06/30 09:10:20 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	ft_clean_bench(t_bench **bench)
 {
 	free((*bench)->disorder);
+	free((*bench)->strategy);
 	free((*bench)->sa);
 	free((*bench)->sb);
 	free((*bench)->ss);
