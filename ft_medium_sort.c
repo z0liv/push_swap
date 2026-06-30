@@ -6,28 +6,11 @@
 /*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/26 12:37:54 by khurtado          #+#    #+#             */
-/*   Updated: 2026/06/30 13:29:05 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/06/30 23:05:13 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-static int	ft_find_node(t_stack *stack, int n_index, int len)
-{
-	t_d_list	*tmp_node;
-	int			counter;
-
-	tmp_node = stack->head;
-	counter = 0;
-	while (counter < len)
-	{
-		if (tmp_node->norm_index == n_index)
-			return (1);
-		tmp_node = tmp_node->next;
-		counter++;
-	}
-	return (0);
-}
 
 double	ft_sqrt(t_stack *stack)
 {
@@ -48,43 +31,68 @@ double	ft_sqrt(t_stack *stack)
 	return (root);
 }
 
+static void	ft_fill_b(t_stack *stack_a, t_stack *stack_b,
+				t_bench *bench, int *range)
+{
+	if (stack_a->head->norm_index >= range[0]
+		&& stack_a->head->norm_index <= range[1])
+	{
+		if (stack_a->head->norm_index < (range[0] + range[1]) / 2)
+			ft_push_dlst(stack_a, stack_b, bench, "b");
+		else
+		{
+			ft_push_dlst(stack_a, stack_b, bench, "b");
+			ft_rotate_dlst(stack_b, 'b', bench);
+		}
+	}
+	else if (ft_find_node(stack_a, range[0], stack_a->size / 2))
+		ft_rotate_dlst(stack_a, 'a', bench);
+	else
+		ft_rrotate_dlst(stack_a, 'a', bench);
+}
+
+static void	ft_fill_a(t_stack *stack_a, t_stack *stack_b, t_bench *bench)
+{
+	int	number;
+
+	number = stack_b->size - 1;
+	while (number > -1)
+	{
+		if (stack_b->head->norm_index == number)
+		{
+			ft_push_dlst(stack_b, stack_a, bench, "a");
+			number--;
+		}
+		else 
+			ft_rotate_dlst(stack_b, 'b', bench);
+	}
+}
+
 void	ft_medium_sort(t_stack *stack_a, t_bench *bench)
 {
 	t_stack *stack_b;
 	int		chunks;
-	int		min;
-	int		max;
+	int		range[2];
 	int		filled;
 	
-	min = 0;
 	chunks = (int) ft_sqrt(stack_a);
-	max = chunks - 1;
+	range[0] = 0;
+	range[1] = chunks - 1;
 	stack_b = ft_newstack();
 	while (stack_a->size)
 	{
 		filled = 0;
 		while (filled < chunks)
 		{
-			if (stack_a->head->norm_index >= min && stack_a->head->norm_index <= max)
-			{
-				if(stack_a->head->norm_index < (min + max) / 2)
-					ft_push_dlst(stack_a, stack_b, bench, "b");
-				else
-				{
-					ft_push_dlst(stack_a, stack_b, bench, "b");
-					ft_rotate_dlst(stack_b, 'b', bench);
-				}
+			if (stack_a->head->norm_index >= range[0]
+				&& stack_a->head->norm_index <= range[1])
 				filled++;
-			}
-			else if (ft_find_node(stack_a, min, (int)(stack_a->size / 2)))
-				ft_rotate_dlst(stack_a, 'a', bench);
-			else
-				ft_rrotate_dlst(stack_a, 'a', bench);
+			ft_fill_b(stack_a, stack_b, bench, range);
 		}
-		min += chunks;
-		max += chunks;
+		range[0] += chunks;
+		range[1] += chunks;
 	}
-	(void) bench;
+	ft_fill_a(stack_a, stack_b, bench);
 }
 
 /*
