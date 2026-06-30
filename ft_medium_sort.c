@@ -6,7 +6,7 @@
 /*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/26 12:37:54 by khurtado          #+#    #+#             */
-/*   Updated: 2026/06/30 09:11:40 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/06/30 11:43:55 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	ft_medium_sort(t_stack *stack_a, t_bench *bench)
 	{
 		if (stack_a->head->norm_index >= min && stack_a->head->norm_index <= max)
 		{
-			ft_push_dlst(stack_a, stack_b, bench, "b");
+			ft_push_dlst(stack_a, stack_b, bench, "a");
 			filled++;
 		}
 		else
