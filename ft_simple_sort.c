@@ -6,13 +6,13 @@
 /*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/24 12:44:43 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/29 23:59:02 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/06/30 13:12:14 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_find_node(t_stack *stack, int n_index, int len)
+static int	ft_find_node(t_stack *stack, int n_index, int len)
 {
 	t_d_list	*tmp_node;
 	int			counter;
