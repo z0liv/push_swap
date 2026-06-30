@@ -3,10 +3,10 @@
 #                                                          :::      ::::::::   #
 #   Makefile                                             :+:      :+:    :+:   #
 #                                                      +:+ +:+         +:+     #
-#   By: khurtado <khurtado@student.42urduliz.com>    +#+  +:+       +#+        #
+#   By: omarquez <omarquez@student.42urduliz.com>    +#+  +:+       +#+        #
 #                                                  +#+#+#+#+#+   +#+           #
 #   Created: 2026/06/05 09:12:44 by omarquez            #+#    #+#             #
-#   Updated: 2026/06/30 09:12:16 by khurtado           ###   ########.fr       #
+#   Updated: 2026/06/30 10:39:03 by omarquez           ###   ########.fr       #
 #                                                                              #
 # **************************************************************************** #
 
