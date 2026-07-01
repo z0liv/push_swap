@@ -6,13 +6,13 @@
 /*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/24 12:59:41 by khurtado          #+#    #+#             */
-/*   Updated: 2026/06/30 22:54:28 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/07/01 09:29:15 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void ft_helper(t_stack *stack_src)
+static void	ft_helper(t_stack *stack_src)
 {
 	stack_src->head = NULL;
 	stack_src->tail = NULL;

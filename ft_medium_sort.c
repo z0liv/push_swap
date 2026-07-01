@@ -6,7 +6,7 @@
 /*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/26 12:37:54 by khurtado          #+#    #+#             */
-/*   Updated: 2026/06/30 23:05:13 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/07/01 09:28:34 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,16 @@ double	ft_sqrt(t_stack *stack)
 	double	number;
 	double	root;
 	int		counter;
-	
+
 	number = (double) stack->size;
 	if (number == 0)
-        return (0);
+		return (0);
 	root = number;
 	counter = 0;
-	while(counter < 10)
+	while (counter < 10)
 	{
-		root = (number / root + root ) / 2;
-		counter++; 
+		root = (number / root + root) / 2;
+		counter++;
 	}
 	return (root);
 }
@@ -63,18 +63,20 @@ static void	ft_fill_a(t_stack *stack_a, t_stack *stack_b, t_bench *bench)
 			ft_push_dlst(stack_b, stack_a, bench, "a");
 			number--;
 		}
-		else 
+		else if (ft_find_node(stack_b, number, stack_b->size / 2))
 			ft_rotate_dlst(stack_b, 'b', bench);
+		else
+			ft_rrotate_dlst(stack_b, 'b', bench);
 	}
 }
 
 void	ft_medium_sort(t_stack *stack_a, t_bench *bench)
 {
-	t_stack *stack_b;
+	t_stack	*stack_b;
 	int		chunks;
 	int		range[2];
 	int		filled;
-	
+
 	chunks = (int) ft_sqrt(stack_a);
 	range[0] = 0;
 	range[1] = chunks - 1;

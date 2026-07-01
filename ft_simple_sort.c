@@ -6,12 +6,11 @@
 /*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/24 12:44:43 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/30 21:06:26 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/07/01 09:25:51 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
 
 void	ft_simple_sort(t_stack *stack_a, t_bench *bench)
 {
