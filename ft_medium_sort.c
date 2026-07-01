@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_medium_sort.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/26 12:37:54 by khurtado          #+#    #+#             */
-/*   Updated: 2026/07/01 13:21:41 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/07/01 20:30:32 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,11 @@ double	ft_sqrt(t_stack *stack)
 	return (root);
 }
 
-static void	ft_fill_b(t_stack *stack_a, t_stack *stack_b,
+static int	ft_fill_b(t_stack *stack_a, t_stack *stack_b,
 				t_bench *bench, int *range)
 {
+	if (!stack_a || !stack_a->head)
+		return (0);
 	if (stack_a->head->norm_index >= range[0]
 		&& stack_a->head->norm_index <= range[1])
 	{
@@ -45,10 +47,11 @@ static void	ft_fill_b(t_stack *stack_a, t_stack *stack_b,
 			ft_rotate_dlst(stack_b, 'b', bench);
 		}
 	}
-	else if (ft_find_node_in_range(stack_a, range, stack_a->size / 2))
+	else if (ft_find_node(stack_a, range[0], stack_a->size / 2))
 		ft_rotate_dlst(stack_a, 'a', bench);
 	else
 		ft_rrotate_dlst(stack_a, 'a', bench);
+	return (1);
 }
 
 static void	ft_fill_a(t_stack *stack_a, t_stack *stack_b, t_bench *bench)
@@ -63,7 +66,7 @@ static void	ft_fill_a(t_stack *stack_a, t_stack *stack_b, t_bench *bench)
 			ft_push_dlst(stack_b, stack_a, bench, "a");
 			number--;
 		}
-		else if (ft_find_node(stack_b, number,  stack_b->size / 2))
+		else if (ft_find_node(stack_b, number, stack_b->size / 2))
 			ft_rotate_dlst(stack_b, 'b', bench);
 		else
 			ft_rrotate_dlst(stack_b, 'b', bench);
@@ -84,18 +87,18 @@ void	ft_medium_sort(t_stack *stack_a, t_bench *bench)
 	while (stack_a->size)
 	{
 		filled = 0;
-		while (filled < chunks)
+		while (filled < chunks && stack_a->head)
 		{
 			if (stack_a->head->norm_index >= range[0]
 				&& stack_a->head->norm_index <= range[1])
-					filled++;
-			ft_fill_b(stack_a, stack_b, bench, range);
+				filled++;
+			if (!ft_fill_b(stack_a, stack_b, bench, range))
+				break;
 		}
 		range[0] += chunks;
 		range[1] += chunks;
 	}
 	ft_fill_a(stack_a, stack_b, bench);
-	ft_dlstclear(stack_b, &stack_b->size);
 }
 
 /*
