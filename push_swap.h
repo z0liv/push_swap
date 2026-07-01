@@ -6,7 +6,7 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 09:10:23 by omarquez          #+#    #+#             */
-/*   Updated: 2026/07/01 09:40:59 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/07/01 12:56:07 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ void		ft_complex_sort(t_stack *stack_a, t_bench *bench);
 void		ft_medium_sort(t_stack *stack_a, t_bench *bench);
 void		ft_simple_sort(t_stack *stack_a, t_bench *bench);
 int			ft_find_node(t_stack *stack, int n_index, int len);
+int			ft_find_node_in_range(t_stack *stack, int *range, int len);
 
 void		ft_dlstadd_back(t_stack *stack, t_d_list *new);
 void		ft_dlstclear(t_stack *stack, int *array_len);

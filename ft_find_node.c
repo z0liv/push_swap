@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_find_node.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/30 20:54:27 by khurtado          #+#    #+#             */
-/*   Updated: 2026/06/30 20:54:50 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/07/01 12:55:34 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,30 @@ int	ft_find_node(t_stack *stack, int n_index, int len)
 			return (1);
 		tmp_node = tmp_node->next;
 		counter++;
+	}
+	return (0);
+}
+
+int	ft_find_node_in_range(t_stack *stack, int *range, int len)
+{
+	t_d_list	*tmp_node;
+	int			counter1;
+	int			counter2;
+
+	tmp_node = stack->head;
+	counter1 = 0;
+	while (counter1 < len)
+	{
+		counter2 = range[0];
+		
+		while(counter2 <= range[1])
+		{
+			if (tmp_node->norm_index == counter2)
+					return (1);
+			counter2 ++;
+		}
+		tmp_node = tmp_node->next;
+		counter1++;
 	}
 	return (0);
 }

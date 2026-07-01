@@ -6,7 +6,7 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/26 12:37:54 by khurtado          #+#    #+#             */
-/*   Updated: 2026/07/01 09:48:48 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/07/01 13:21:41 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static void	ft_fill_b(t_stack *stack_a, t_stack *stack_b,
 			ft_rotate_dlst(stack_b, 'b', bench);
 		}
 	}
-	else if (ft_find_node(stack_a, range[0], stack_a->size / 2))
+	else if (ft_find_node_in_range(stack_a, range, stack_a->size / 2))
 		ft_rotate_dlst(stack_a, 'a', bench);
 	else
 		ft_rrotate_dlst(stack_a, 'a', bench);
@@ -63,7 +63,7 @@ static void	ft_fill_a(t_stack *stack_a, t_stack *stack_b, t_bench *bench)
 			ft_push_dlst(stack_b, stack_a, bench, "a");
 			number--;
 		}
-		else if (ft_find_node(stack_b, number, stack_b->size / 2))
+		else if (ft_find_node(stack_b, number,  stack_b->size / 2))
 			ft_rotate_dlst(stack_b, 'b', bench);
 		else
 			ft_rrotate_dlst(stack_b, 'b', bench);
@@ -88,7 +88,7 @@ void	ft_medium_sort(t_stack *stack_a, t_bench *bench)
 		{
 			if (stack_a->head->norm_index >= range[0]
 				&& stack_a->head->norm_index <= range[1])
-				filled++;
+					filled++;
 			ft_fill_b(stack_a, stack_b, bench, range);
 		}
 		range[0] += chunks;
