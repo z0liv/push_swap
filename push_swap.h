@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 09:10:23 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/30 20:56:08 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/07/01 09:40:59 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,8 @@ typedef struct s_bench
 
 }	t_bench;
 
-void		ft_medium_sort(t_stack *stack_a, t_bench *bench);
 void		ft_complex_sort(t_stack *stack_a, t_bench *bench);
+void		ft_medium_sort(t_stack *stack_a, t_bench *bench);
 void		ft_simple_sort(t_stack *stack_a, t_bench *bench);
 int			ft_find_node(t_stack *stack, int n_index, int len);
 
