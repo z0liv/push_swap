@@ -3,49 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   ft_push_dlst.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/24 12:59:41 by khurtado          #+#    #+#             */
-/*   Updated: 2026/07/01 09:29:15 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/07/01 10:58:50 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	ft_helper(t_stack *stack_src)
-{
-	stack_src->head = NULL;
-	stack_src->tail = NULL;
-}
-
-int	ft_push_dlst(t_stack *stack_src, t_stack *stack_dst, t_bench *bench,
-			char *stack_name)
+int ft_push_dlst(t_stack *stack_src, t_stack *stack_dst, t_bench *bench,
+		char *stack_name)
 {
 	t_d_list	*node;
 
+	if (stack_src->size == 0)
+		return (0);
 	node = stack_src->head;
-	if (stack_src->size == 1)
-	{
-		ft_helper(stack_src);
-	}
-	else
-	{
-		node->prev->next = node->next;
-		node->next->prev = node->prev;
-		stack_src->head = node->next;
-		stack_src->tail = node->prev;
-	}
-	stack_src->size--;
-	node->next = node;
-	node->prev = node;
+	node->prev->next = node->next;
+	node->next->prev = node->prev;
+	stack_src->head = node->next;
+	stack_src->tail = node->prev;
 	ft_dlstadd_front(stack_dst, node);
+	stack_src->size--;
 	if (!ft_strncmp(stack_name, "a", 1))
 	{
 		*(bench)->pa += 1;
 		return (write(1, "pa\n", 3));
 	}
 	*(bench)->pb += 1;
-	return (write(1, "pb\n", 3));
+return (write(1, "pb\n", 3));
 }
 /*static void	ft_print_list(t_stack *stack, int *array_len)
 {
