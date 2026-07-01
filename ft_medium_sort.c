@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_medium_sort.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/26 12:37:54 by khurtado          #+#    #+#             */
-/*   Updated: 2026/07/01 09:28:34 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/07/01 09:48:48 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,7 @@ void	ft_medium_sort(t_stack *stack_a, t_bench *bench)
 		range[1] += chunks;
 	}
 	ft_fill_a(stack_a, stack_b, bench);
+	ft_dlstclear(stack_b, &stack_b->size);
 }
 
 /*
