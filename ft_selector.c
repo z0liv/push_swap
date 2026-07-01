@@ -6,7 +6,7 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/19 11:41:28 by khurtado          #+#    #+#             */
-/*   Updated: 2026/06/30 14:34:18 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/07/01 09:16:40 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,19 @@ static void	ft_free_helper(long *arr,
 
 static char	*ft_algorithm(t_bench *bench, char *str)
 {
-	if ((*(bench)->disorder < 0.2 && (!str || *str == '\0'))
+	if (!ft_strncmp(str, "--adaptive", 10))
+	{
+		str = "";
+	}
+	if ((*(bench)->disorder < 0.2 && (*str == '\0'))
 		|| !ft_strncmp(str, "--simple", 8))
-		return ("/ O(n²)");
-	else if ((((!str || *str == '\0') && *(bench)->disorder >= 0.2)
+		return (" / O(n²)");
+	else if ((((*str == '\0') && *(bench)->disorder >= 0.2)
 			&& *(bench)->disorder < 0.5) || !ft_strncmp(str, "--medium", 8))
-		return ("/ O(n√n)");
-	else if ((*(bench)->disorder >= 0.5 && (!str || *str == '\0'))
+		return (" / O(n√n)");
+	else if ((*(bench)->disorder >= 0.5 && (*str == '\0'))
 		|| !ft_strncmp(str, "--complex", 9))
-		return ("/ O(n log n)");
+		return (" / O(n log n)");
 	return (NULL);
 }
 
@@ -49,7 +53,7 @@ static char	*ft_strategy_setter(char *str, t_bench *bench)
 		return (ft_strjoin(str + 2, str2));
 	}
 	else
-		return (ft_strjoin("Adaptative", str2));
+		return (ft_strjoin("Adaptive", str2));
 }
 
 void	ft_handle_disorder(long *array, int *counter,
@@ -58,17 +62,17 @@ void	ft_handle_disorder(long *array, int *counter,
 	t_stack	*stack_a;
 
 	stack_a = ft_arr_to_lst(array, counter, flags, bench);
+	bench->strategy = ft_strategy_setter(flags[1], bench);
 	if (*bench->disorder == 0.0)
 		ft_free_helper(array, stack_a, flags, bench);
-	else if (ft_find_str("--simple", flags[1]))
+	else if (ft_find_str("--Simple", flags[1]))
 		ft_simple_sort(stack_a, bench);
-	else if (ft_find_str("--medium", flags[1]))
+	else if (ft_find_str("--Medium", flags[1]))
 		ft_medium_sort(stack_a, bench);
-	else if (ft_find_str("--complex", flags[1]))
+	else if (ft_find_str("--Complex", flags[1]))
 		ft_complex_sort(stack_a, bench);
 	else
 	{
-		bench->strategy = ft_strategy_setter(flags[1], bench);
 		if (*bench->disorder < 0.2)
 			ft_simple_sort(stack_a, bench);
 		else if (*bench->disorder >= 0.2 && *bench->disorder < 0.5)
