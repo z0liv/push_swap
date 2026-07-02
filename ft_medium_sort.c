@@ -6,7 +6,7 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/26 12:37:54 by khurtado          #+#    #+#             */
-/*   Updated: 2026/07/02 08:57:25 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/07/02 09:06:00 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ void	ft_medium_sort(t_stack *stack_a, t_bench *bench)
 				&& stack_a->head->norm_index <= range[1])
 				filled++;
 			if (!ft_fill_b(stack_a, stack_b, bench, range))
-				break;
+				break ;
 		}
 		range[0] += chunks;
 		range[1] += chunks;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_push_dlst.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/24 12:59:41 by khurtado          #+#    #+#             */
-/*   Updated: 2026/07/01 19:59:04 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/07/02 09:05:45 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void	ft_push_helper(t_stack *stack_src)
 	stack_src->tail = NULL;
 }
 
-int ft_push_dlst(t_stack *stack_src, t_stack *stack_dst, t_bench *bench,
+int	ft_push_dlst(t_stack *stack_src, t_stack *stack_dst, t_bench *bench,
 		char *stack_name)
 {
 	t_d_list	*node;
