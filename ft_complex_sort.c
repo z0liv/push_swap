@@ -6,7 +6,7 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/30 10:33:57 by omarquez          #+#    #+#             */
-/*   Updated: 2026/07/02 13:54:08 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/07/03 08:46:04 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,5 @@ void	ft_complex_sort(t_stack *stack_a, t_bench *bench)
 			ft_push_dlst(stack_b, stack_a, bench, "a");
 		counter1 ++;
 	}
-	ft_dlstclear(stack_b, stack_b->size);
+	ft_dlstclear(stack_b, &stack_b->size);
 }
