@@ -6,7 +6,7 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/23 12:05:30 by khurtado          #+#    #+#             */
-/*   Updated: 2026/07/03 10:59:29 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/07/03 12:53:58 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,3 @@ void	ft_print_bench(t_bench *bench)
 		ft_putchar_fd('\n', 2);
 	}
 }
-
