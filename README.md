@@ -3,6 +3,15 @@
 # PUSH_SWAP
 ## DESCRIPCIÓN:
 **push_swap** es un proyecto algorítmico cuyo objetivo es ordenar una lista de números enteros utilizando dos pilas (`stack a` y `stack b`) y un conjunto restringido de operaciones. La meta es encontrar la solución con el menor número de movimientos posible.
+##### Dislaimer!! el siguiente gráfico fue ideado antes de realizar el programa comple, para ayudarnos a entender mejor qué teníamos que realizar en cada paso, el flujo final del programa ha cambiado ligeramente.
+![alt text](push_swap.webp)
+#### Criterio de desorden
+Índice de desorden bajo: Si desorden < 0,2, el método elegido debe ejecutarse
+en O(n).
+Índice de desorden medio: Si 0,2 ≤ desorden < 0,5, el método elegido debe
+ejecutarse en O(n√n).
+Índice de desorden alto: Si desorden ≥ 0,5, el método elegido debe ejecutarse
+en O(n log n).
 
 ## FUNCIONAMIENTO DE LOS ALGORITMOS:
 
@@ -22,6 +31,18 @@ Y si no coincide, verificamos con la funcion **```ft_find_node```** la mitad sig
 Y si no se encuentra el **```norm_index```** adecuado en la mitad, eso significa que esta en la mitad previa por lo que se realiza la operacion **```rra```**  bajando todos los elementos del stack_a una posicion hasta llegar al **```norm_index```** adecuado.
 
 Cuando el **```stack_a```** se queda sin elementos eso quiere decir que los elementos estan en el orden inverso en el **```stack_b```** por lo que recorremos el **```stack_b```** hasta que este se quede sin elementos realizando la operacion **```pa```** dando como resultado el **```stack_a```** ordenado.
+
+---
+### Algoritmo Medio: Basado en chunks (de √n).
+Este algoritmo recibe por parametro el stack_a desordenado.
+
+Se crea dentro de este un stack_b vacio para poder hacer los movimientos para ordenarlo.
+
+Se calcula la raíz cuadrada del número mediante el tamaño del stack A.
+Mientras el stack A contenga algún elemento, se van pasando los chunks(que van definidos por un rango igual al √n y el index de la lista). A la hora de pasar los números a B, si el número es más grande que la mitad del chunk, se hace un rotate también para que de esta forma todas las mitades mayores de cada chunk queden posicionadas en la parte inferior del stack B.
+
+Cuando B contiene ya todos los elementos, se procede a extraer el número con el índice mayor del stack B y se hace push hacia el stack A (PB).
+De esta forma, al tener todos los números mayores próximos unos a otros, realiza una cantidad de pasos menor que el algoritmo simple.
 
 ---
 ### Algoritmo Complejo: Adaptacion de Radix Sort LSB.
