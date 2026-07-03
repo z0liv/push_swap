@@ -6,7 +6,7 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/26 12:37:54 by khurtado          #+#    #+#             */
-/*   Updated: 2026/07/02 09:06:00 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/07/03 10:56:26 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static int	ft_fill_b(t_stack *stack_a, t_stack *stack_b,
 			ft_rotate_dlst(stack_b, 'b', bench);
 		}
 	}
-	else if (ft_find_node(stack_a, range[0], stack_a->size / 2))
+	else if (ft_find_node_in_range(stack_a, range, stack_a->size / 2))
 		ft_rotate_dlst(stack_a, 'a', bench);
 	else
 		ft_rrotate_dlst(stack_a, 'a', bench);
@@ -101,19 +101,3 @@ void	ft_medium_sort(t_stack *stack_a, t_bench *bench)
 	ft_fill_a(stack_a, stack_b, bench);
 	ft_dlstclear(stack_b, &stack_b->size);
 }
-
-/*
-int main(void)
-{
-    t_stack *stack;
-    int n;
-
-    stack = ft_newstack();
-	n = 500;
-    if (!stack)
-		return (1);
-	stack->size = n;
-    printf("sqrt(%d) = %.2f\n", stack->size, ft_sqrt(stack));
-    free(stack);
-    return (0);
-}*/

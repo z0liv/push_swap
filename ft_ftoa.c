@@ -6,7 +6,7 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/24 08:45:30 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/26 12:30:00 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/07/03 11:02:09 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,15 +89,4 @@ void	ft_ftoa(float n, char *res, int after_point)
 		ft_int_to_str((int) num_float, res + number + 1, after_point);
 	}
 }
-/* 
-int main(void)
-{
-	char *res;
-	res = malloc(sizeof(char *));
-	float n = 23.2134332143;
-	ftoa(n, res, 2);
-	printf("%s\n", res);
-	free(res);
-	return (0);
-}
- */
+

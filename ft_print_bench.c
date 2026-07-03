@@ -6,7 +6,7 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/23 12:05:30 by khurtado          #+#    #+#             */
-/*   Updated: 2026/06/30 12:39:42 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/07/03 10:59:29 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,14 +62,3 @@ void	ft_print_bench(t_bench *bench)
 	}
 }
 
-/* int main(void)
-{
-	t_bench *bench;
-
-	bench = malloc(sizeof(t_bench));
-	ft_init_bench(bench);
-	*bench->disorder = 24.93;
-	ft_print_bench(bench);
-	ft_clean_bench(&bench);
-	return (0);
-} */
