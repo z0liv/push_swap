@@ -6,13 +6,13 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/23 10:57:16 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/26 12:23:16 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/07/07 08:51:26 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_malloc_bench(t_bench *bench)
+static void	ft_malloc_bench(t_bench *bench)
 {
 	bench->strategy = NULL;
 	bench->disorder = malloc(sizeof(float));

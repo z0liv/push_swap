@@ -6,7 +6,7 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 10:23:31 by omarquez          #+#    #+#             */
-/*   Updated: 2026/06/16 12:03:59 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/07/07 08:51:31 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,4 @@ int	ft_is_duplicate(long *array, int array_len)
 	}
 	return (0);
 }
-/* int main () {
-	int arr[] = {4, 5, 6, 1};
-	int array_len = sizeof(arr) / sizeof(arr[0]);
 
-	ft_printf("%d", ft_is_duplicate(arr, array_len));
-
-    return 0;
-}
- */

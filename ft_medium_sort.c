@@ -6,13 +6,13 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/26 12:37:54 by khurtado          #+#    #+#             */
-/*   Updated: 2026/07/03 10:56:26 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/07/07 08:52:06 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-double	ft_sqrt(t_stack *stack)
+static double	ft_sqrt(t_stack *stack)
 {
 	double	number;
 	double	root;

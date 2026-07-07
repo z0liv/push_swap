@@ -6,7 +6,7 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 09:10:23 by omarquez          #+#    #+#             */
-/*   Updated: 2026/07/01 12:56:07 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/07/07 08:54:46 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,16 +78,15 @@ void		ft_init_bench(t_bench *bench);
 void		ft_print_bench(t_bench *bench);
 void		ft_clean_bench(t_bench **bench);
 
-//validations
 int			ft_is_valid_input(char *input);
 int			ft_is_duplicate(long *array, int array_len);
 int			ft_is_overflow(long *array, int array_len);
-//list manipulation
+
 t_stack		*ft_arr_to_lst(long	*arr, int *counter,
 				char **flag, t_bench *bench);
 long		*ft_copy_long_arr(long *array, int array_len);
 int			ft_find_norm_index(long num, long *sorted_arr, int array_len);
-//arguments manipulation
+
 char		*ft_concat_params(char **args);
 long int	ft_atol(const char *str);
 void		ft_ftoa(float n, char *res, int after_point);

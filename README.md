@@ -3,7 +3,7 @@
 # PUSH_SWAP
 ## DESCRIPCIÓN:
 **push_swap** es un proyecto algorítmico cuyo objetivo es ordenar una lista de números enteros utilizando dos pilas (`stack a` y `stack b`) y un conjunto restringido de operaciones. La meta es encontrar la solución con el menor número de movimientos posible.
-##### Dislaimer!! el siguiente gráfico fue ideado antes de realizar el programa comple, para ayudarnos a entender mejor qué teníamos que realizar en cada paso, el flujo final del programa ha cambiado ligeramente.
+#### Disclaimer!! el siguiente gráfico fue ideado antes de realizar el programa completo, para ayudarnos a entender mejor qué teníamos que realizar en cada paso, el flujo final del programa ha cambiado ligeramente.
 ![alt text](push_swap.webp)
 #### Criterio de desorden
 Índice de desorden bajo: Si desorden < 0,2, el método elegido debe ejecutarse

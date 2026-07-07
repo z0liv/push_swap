@@ -6,27 +6,27 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/23 12:05:30 by khurtado          #+#    #+#             */
-/*   Updated: 2026/07/03 12:53:58 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/07/07 08:52:28 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_str_str_helper(char *s1, char *s2)
+static void	ft_str_str_helper(char *s1, char *s2)
 {
 	ft_putstr_fd(s1, 2);
 	ft_putstr_fd(s2, 2);
 	ft_putchar_fd('\n', 2);
 }
 
-void	ft_str_int_helper(char *s1, size_t s1_n)
+static void	ft_str_int_helper(char *s1, size_t s1_n)
 {
 	ft_putstr_fd(s1, 2);
 	ft_putnbr_fd((int) s1_n, 2);
 	ft_putchar_fd('\n', 2);
 }
 
-void	ft_str_ops_helper(char *s1, size_t s1_n, char *s2, size_t s2_n)
+static void	ft_str_ops_helper(char *s1, size_t s1_n, char *s2, size_t s2_n)
 {
 	ft_putstr_fd(s1, 2);
 	ft_putnbr_fd((int) s1_n, 2);

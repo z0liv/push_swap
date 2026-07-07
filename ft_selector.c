@@ -6,7 +6,7 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/19 11:41:28 by khurtado          #+#    #+#             */
-/*   Updated: 2026/07/01 10:34:59 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/07/07 08:53:44 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ static char	*ft_strategy_setter(char *str, t_bench *bench)
 		return (ft_strjoin("Adaptive", str2));
 }
 
-void	ft_handle_disorder(long *array, int *counter,
+static void	ft_handle_disorder(long *array, int *counter,
 	char **flags, t_bench *bench)
 {
 	t_stack	*stack_a;

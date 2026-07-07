@@ -6,7 +6,7 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/24 12:59:41 by khurtado          #+#    #+#             */
-/*   Updated: 2026/07/02 09:05:45 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/07/07 08:52:37 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,67 +45,3 @@ int	ft_push_dlst(t_stack *stack_src, t_stack *stack_dst, t_bench *bench,
 	*(bench)->pb += 1;
 	return (write(1, "pb\n", 3));
 }
-/*static void	ft_print_list(t_stack *stack, int *array_len)
-{
-	int			counter;
-	t_d_list	*lst_tmp;
-
-	counter = 0;
-	lst_tmp = stack->head;
-
-	while (counter < *array_len)
-	{
-		printf(
-			"Node %d\n"
-			"  addr       : %p\n"
-			"  content    : %d\n"
-			"  norm_index : %d\n"
-			"  prev       : %p\n"
-			"  next       : %p\n\n",
-			counter,
-			(void *)lst_tmp,
-			lst_tmp->content,
-			lst_tmp->norm_index,
-			(void *)lst_tmp->prev,
-			(void *)lst_tmp->next
-		);
-
-		lst_tmp = lst_tmp->next;
-		counter++;
-	}
-}
-int	main(void)
-{
-	t_stack		*stack;
-	int			len;
-	int			len2;
-	t_stack		*stackb;
-	t_bench		*bench;
-
-	len = 4;
-	len2 = 2;
-	bench = malloc(sizeof(t_bench));
-	ft_init_bench(bench);
-	stack = ft_newstack();
-	stackb = ft_newstack();
-	ft_dlstadd_back(stack, ft_dlstnew(42, 0));
-	ft_dlstadd_back(stack, ft_dlstnew(84, 1));
-	ft_dlstadd_back(stack, ft_dlstnew(126, 2));
-	ft_dlstadd_back(stack, ft_dlstnew(122, 3));
-
-	// Test content
-	ft_print_list(stack, &len);
-	
-	printf("\n-----------------------------------------------\n");
-	ft_push_dlst(stack,stackb, bench, "a");
-	ft_push_dlst(stack,stackb, bench, "a");
-	ft_push_dlst(stack,stackb, bench, "a");
-	ft_push_dlst(stackb,stack, bench, "b");
-	ft_print_list(stackb, &len2);
-	len -= 2;
-	printf("\n-----------------------------------------------\n");
-	ft_print_list(stack, &len);
-	ft_print_bench(bench);
-	ft_dlstclear(stack, &len);
-	return (0);
-}*/
