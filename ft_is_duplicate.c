@@ -6,7 +6,7 @@
 /*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/10 10:23:31 by omarquez          #+#    #+#             */
-/*   Updated: 2026/07/07 08:51:31 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/07/07 09:29:01 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,3 @@ int	ft_is_duplicate(long *array, int array_len)
 	}
 	return (0);
 }
-
