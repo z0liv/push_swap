@@ -4,16 +4,18 @@
 ## DESCRIPCIÓN:
 **push_swap** es un proyecto algorítmico cuyo objetivo es ordenar una lista de números enteros utilizando dos pilas (`stack a` y `stack b`) y un conjunto restringido de operaciones. La meta es encontrar la solución con el menor número de movimientos posible.
 
-### [DIAGRAMA DE FLUJO](https://github.com/z0liv/push_swap/blob/master/push_swap.webp)
-#### Criterio de desorden
+### [DIAGRAMA DE FLUJO](https://github.com/Saitek2805/push_swap/blob/master/push_swap.webp)
+
+
+## FUNCIONAMIENTO DE LOS ALGORITMOS:
+
+### Criterio de desorden
 Índice de desorden bajo: Si desorden < 0,2, el método elegido debe ejecutarse
 en O(n).
 Índice de desorden medio: Si 0,2 ≤ desorden < 0,5, el método elegido debe
 ejecutarse en O(n√n).
 Índice de desorden alto: Si desorden ≥ 0,5, el método elegido debe ejecutarse
 en O(n log n).
-
-## FUNCIONAMIENTO DE LOS ALGORITMOS:
 
 ### Algoritmo Simple: Adaptación de Selection Sort.
 
@@ -63,6 +65,7 @@ Se reasigna el valor de **```counter2```** con el tamaño del ```stack_a``` para
 Cuando el **```counter2 == 0```** recorremos el **```stack_b```** hasta que este se quede sin elementos realizando la operación **```pa```**, incrementamos el contador **```counter1```** para aumentar el bit ordenando cada paso hasta que **```counter1 == max_bits,```** dando como resultado el stack_a ordenado.
 
 ---
+En el caso de que la cantidad de argumentos introucidos sea muy pequeña (menor o igual a 5) y no haya flag de estrategia presente, se han implementado algoritmos para optimizar el número de movimientos.
 
 ### APORTACIONES DE CADA INTEGRANTE:
 
@@ -118,6 +121,9 @@ Cuando el **```counter2 == 0```** recorremos el **```stack_b```** hasta que este
 - **ft_print_bench**: Función para poder imprimir la informacion adecuada cuando se llama al modo opcional bench.
 - **Makefile**: Archivo makefile incorporando la libft y ft_printf.
 - **push_swap.h**: Archivo header, incluyendo las nuevas Structs t_bench, t_stack, t_d_lst.
+- **ft_sort_three**: Algoritmo de ordenamiento para 3 elementos para optimizar la cantidad de operaciones.
+- **ft_sort_two**: Algoritmo de ordenamiento para 2 elementos para optimizar la cantidad de operaciones.
+- **ft_sort_small**: Algoritmo de ordenamiento para 4 a 5 elementos para optimizar la cantidad de operaciones.
 
 ### Operaciones Disponibles
 Las instrucciones permitidas para manipular las pilas son:
