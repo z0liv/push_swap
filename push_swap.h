@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/05 09:10:23 by omarquez          #+#    #+#             */
-/*   Updated: 2026/07/08 10:01:31 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/07/08 10:37:59 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ void		ft_complex_sort(t_stack *stack_a, t_bench *bench);
 void		ft_medium_sort(t_stack *stack_a, t_bench *bench);
 void		ft_simple_sort(t_stack *stack_a, t_bench *bench);
 void		ft_bubble_sort(t_stack *stack_a, t_bench *bench);
+void		ft_three_sort(t_stack *stack_a, t_bench *bench);
 int			ft_find_node(t_stack *stack, int n_index, int len);
 int			ft_find_node_in_range(t_stack *stack, int *range, int len);
 

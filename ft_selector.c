@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_selector.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/19 11:41:28 by khurtado          #+#    #+#             */
-/*   Updated: 2026/07/08 09:38:43 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/07/08 10:38:43 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 static void ft_adaptive(t_stack *stack_a, t_bench *bench)
 {
-	if (stack_a->size <= 5)
+	if (stack_a->size == 3)
+		ft_three_sort(stack_a, bench);
+	else if (stack_a->size == 5)
 		ft_bubble_sort(stack_a, bench);
 	else if (*bench->disorder < 0.2)
 		ft_simple_sort(stack_a, bench);
