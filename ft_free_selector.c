@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_free_selector.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/08 09:17:06 by khurtado          #+#    #+#             */
-/*   Updated: 2026/07/08 11:58:23 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/07/08 12:18:51 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_free_selector(long *arr, t_stack *stack, char **flags
 			, t_bench *bench)
 {
-	if (!ft_strncmp(flags[0],"--bench",7))
+	if (!ft_strncmp(flags[0], "--bench", 7))
 		ft_print_bench(bench);
 	free(arr);
 	ft_dlstclear(stack, &stack->size);

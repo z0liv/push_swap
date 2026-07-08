@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_selector.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/19 11:41:28 by khurtado          #+#    #+#             */
-/*   Updated: 2026/07/08 12:07:43 by khurtado         ###   ########.fr       */
+/*   Updated: 2026/07/08 12:19:06 by omarquez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void ft_adaptive(t_stack *stack_a, t_bench *bench)
+static void	ft_adaptive(t_stack *stack_a, t_bench *bench)
 {
 	if (stack_a->size < 3)
 		ft_sort_two(stack_a, bench);
