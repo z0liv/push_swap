@@ -13,7 +13,7 @@ ejecutarse en O(n√n).
 Índice de desorden alto: Si desorden ≥ 0,5, el método elegido debe ejecutarse
 en O(n log n).
 
-## FunciónAMIENTO DE LOS ALGORITMOS:
+## FUNCIONAMIENTO DE LOS ALGORITMOS:
 
 ### Algoritmo Simple: Adaptación de Selection Sort.
 

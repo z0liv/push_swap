@@ -3,25 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   ft_selector.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: omarquez <omarquez@student.42urduliz.com>  +#+  +:+       +#+        */
+/*   By: khurtado <khurtado@student.42urduliz.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/19 11:41:28 by khurtado          #+#    #+#             */
-/*   Updated: 2026/07/07 08:53:44 by omarquez         ###   ########.fr       */
+/*   Updated: 2026/07/08 09:38:43 by khurtado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	ft_free_helper(long *arr,
-		t_stack *stack,
-		char **flags,
-		t_bench *bench)
+static void ft_adaptive(t_stack *stack_a, t_bench *bench)
 {
-	free(arr);
-	ft_dlstclear(stack, &stack->size);
-	ft_free_split(flags, 2);
-	ft_clean_bench(&bench);
-	exit(0);
+	if (stack_a->size <= 5)
+		ft_bubble_sort(stack_a, bench);
+	else if (*bench->disorder < 0.2)
+		ft_simple_sort(stack_a, bench);
+	else if (*bench->disorder >= 0.2 && *bench->disorder < 0.5)
+		ft_medium_sort(stack_a, bench);
+	else if (*bench->disorder >= 0.5)
+		ft_complex_sort(stack_a, bench);
 }
 
 static char	*ft_algorithm(t_bench *bench, char *str)
@@ -64,7 +64,7 @@ static void	ft_handle_disorder(long *array, int *counter,
 	stack_a = ft_arr_to_lst(array, counter, flags, bench);
 	bench->strategy = ft_strategy_setter(flags[1], bench);
 	if (*bench->disorder == 0.0)
-		ft_free_helper(array, stack_a, flags, bench);
+		ft_free_selector(array, stack_a, flags, bench);
 	else if (ft_find_str("--Simple", flags[1]))
 		ft_simple_sort(stack_a, bench);
 	else if (ft_find_str("--Medium", flags[1]))
@@ -72,14 +72,7 @@ static void	ft_handle_disorder(long *array, int *counter,
 	else if (ft_find_str("--Complex", flags[1]))
 		ft_complex_sort(stack_a, bench);
 	else
-	{
-		if (*bench->disorder < 0.2)
-			ft_simple_sort(stack_a, bench);
-		else if (*bench->disorder >= 0.2 && *bench->disorder < 0.5)
-			ft_medium_sort(stack_a, bench);
-		else if (*bench->disorder >= 0.5)
-			ft_complex_sort(stack_a, bench);
-	}
+		ft_adaptive(stack_a, bench);
 	free(array);
 	ft_dlstclear(stack_a, &stack_a->size);
 	if (ft_find_str(flags[0], "--bench"))
